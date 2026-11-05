@@ -23,7 +23,7 @@
 </helmet>
 <div style="width:1440px;height:900px;box-sizing:border-box;background:#0B1F1A;color:#EAF3E7;display:flex;flex-direction:column;">
   <div style="height:76px;flex:0 0 76px;background:#0E211C;border-bottom:1px solid #1E3B34;display:flex;align-items:center;justify-content:space-between;padding:0 48px;box-sizing:border-box;">
-    <div style="display:flex;align-items:center;gap:28px;"><div style="display:flex;align-items:center;gap:10px;"><span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:26px;width:auto;display:block;"></span></div><a href="MemberDashboard.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Dashboard</a><a href="MemberBookings.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Bookings</a><a href="MemberQRCode.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Entry</a><a href="FamilyAccount.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Family</a><a href="MemberProfile.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Profile</a></div><div style="display:flex;align-items:center;gap:16px;"><div style="font-size:13px;color:#7C8F86;">Signed in as Amina Hassan</div><a href="MemberSignup.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:#C9D6CF;">Sign out</a></div>
+    <div style="display:flex;align-items:center;gap:28px;"><div style="display:flex;align-items:center;gap:10px;"><div style="width:30px;height:30px;border-radius:8px;background:#C6F24E;display:flex;align-items:center;justify-content:center;font-weight:700;color:#0B1F1A;font-size:14px;">AC</div><div style="font-size:15px;font-weight:700;">Active Circle</div></div><a href="MemberDashboard.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Dashboard</a><a href="MemberBookings.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Bookings</a><a href="MemberQRCode.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Entry</a><a href="FamilyAccount.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Family</a><a href="MemberProfile.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Profile</a></div><div style="display:flex;align-items:center;gap:16px;"><div style="font-size:13px;color:#7C8F86;">Signed in as Amina Hassan</div><a href="MemberSignup.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:#C9D6CF;">Sign out</a></div>
   </div>
   <div style="flex:1;padding:36px 48px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;">
     <div style="width:520px;display:flex;flex-direction:column;gap:18px;">
@@ -47,14 +47,14 @@
             </sc-for>
           </div>
         </div>
-        <button onClick="{{submit}}" style="background:{{submitBg}};color:{{submitColor}};font-weight:600;font-size:14px;padding:13px 0;border-radius:11px;margin-top:4px;">Submit request</button>
+        <button onClick="{{submit}}" style="background:{{submitBg}};color:{{submitColor}};font-weight:600;font-size:14px;padding:13px 0;border-radius:11px;margin-top:4px;">Confirm freeze</button>
       </div>
       </sc-if>
 
       <sc-if value="{{isSubmitted}}" hint-placeholder-val="{{false}}">
       <div style="background:#12261F;border:1px solid #1E3B34;border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;">
-        <div style="font-size:14px;font-weight:600;color:#C6F24E;">Freeze requested — awaiting staff approval</div>
-        <div style="font-size:13px;color:#C9D6CF;">{{startDate}} to {{endDate}}, reason: {{selectedReasonLabel}}. Billing pauses once approved.</div>
+        <div style="font-size:14px;font-weight:600;color:#C6F24E;">Freeze confirmed — effective immediately</div>
+        <div style="font-size:13px;color:#C9D6CF;">{{startDate}} to {{endDate}}, reason: {{selectedReasonLabel}}. Billing has paused for these dates, no further action needed.</div>
         <a href="MemberDashboard.dc.html" style="color:#7C8F86;font-size:13px;margin-top:4px;">← Back to dashboard</a>
       </div>
       </sc-if>

@@ -106,22 +106,20 @@
   }
 
   function bindElement(el, scopeStack) {
-    Array.prototype.slice.call(el.attributes).forEach(function (attr) {
+    var attrs = Array.prototype.slice.call(el.attributes);
+    var eventAttrs = [];
+
+    // Pass 1: interpolate every plain (non on<Event>) attribute first, style
+    // included. This has to happen before anything touches el.style (pass 2's
+    // cursor hack): the moment JS reads/writes el.style, the browser parses
+    // whatever is currently sitting in the style attribute, and if that's
+    // still raw template text like "background:{{sigContinueBg}}" it's
+    // invalid CSS, so the browser silently drops that declaration for good,
+    // before it ever gets a chance to be interpolated into a real color.
+    attrs.forEach(function (attr) {
       var name = attr.name.toLowerCase();
-      if (name === "onclick") {
-        var whole = wholeExpr(attr.value);
-        if (whole) {
-          var fn = evalExpr(whole, scopeStack);
-          el.removeAttribute("onClick");
-          el.removeAttribute("onclick");
-          if (typeof fn === "function") {
-            el.style.cursor = el.style.cursor || "pointer";
-            el.addEventListener("click", function (e) {
-              e.preventDefault();
-              fn();
-            });
-          }
-        }
+      if (name.indexOf("on") === 0 && name.length > 2) {
+        eventAttrs.push(attr);
         return;
       }
       if (attr.value.indexOf("{{") !== -1) {
@@ -132,6 +130,25 @@
         } else {
           el.setAttribute(attr.name, interpolateString(attr.value, scopeStack));
         }
+      }
+    });
+
+    // Pass 2: wire up on<Event>="{{expr}}" bindings (onClick, onInput,
+    // onChange, onKeyUp, ...) as real event listeners now that every other
+    // attribute, style above all, has already been resolved to real values.
+    eventAttrs.forEach(function (attr) {
+      var name = attr.name.toLowerCase();
+      var whole = wholeExpr(attr.value);
+      if (!whole) return;
+      var fn = evalExpr(whole, scopeStack);
+      var domEvent = name.slice(2);
+      el.removeAttribute(attr.name);
+      if (typeof fn === "function") {
+        if (domEvent === "click") el.style.cursor = el.style.cursor || "pointer";
+        el.addEventListener(domEvent, function (e) {
+          if (domEvent === "click") e.preventDefault();
+          fn(e);
+        });
       }
     });
   }
