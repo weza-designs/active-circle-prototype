@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Yoga Flow</title>
+<script src="./theme.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#0B1F1A;--sidebar-bg:#0E211C;--border:#1E3B34;--card-bg:#12261F;
+  --text:#EAF3E7;--muted:#7C8F86;--muted2:#51605A;--hover:#173028;--nav-muted:#C9D6CF;
+}
+:root[data-theme="light"]{
+  --bg:#FFFFFF;--sidebar-bg:#F0F5EE;--border:#D7E3DA;--card-bg:#F6F9F5;
+  --text:#16261F;--muted:#5B6B63;--muted2:#96A49C;--hover:#E8F3E2;--nav-muted:#5B6B63;
+}
+
+  body{margin:0;font-family:'Archivo',sans-serif;background:var(--bg);}
+  a{color:inherit;text-decoration:none;}
+  .navlink:hover{background:var(--hover);}
+  button{font-family:'Archivo',sans-serif;border:none;cursor:pointer;}
+  .navscroll::-webkit-scrollbar{width:6px;}
+  .navscroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+  .navscroll{scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
+</style>
+</head>
+<body>
+<div style="width:1440px;min-height:900px;box-sizing:border-box;background:var(--bg);color:var(--text);display:flex;flex-direction:column;">
+  <div style="height:76px;flex:0 0 76px;background:var(--sidebar-bg);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;box-sizing:border-box;"><div style="display:flex;align-items:center;gap:28px;"><span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:18px;width:auto;display:block;"></span><a href="MemberDashboard.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:var(--nav-muted);">Dashboard</a><a href="MemberBookings.html" class="navlink" data-active="1" style="padding:8px 14px;border-radius:9px;background:var(--hover);font-size:14px;font-weight:600;color:var(--text);">Bookings</a><a href="MemberQRCode.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:var(--nav-muted);">Entry</a><a href="FamilyAccount.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:var(--nav-muted);">Family</a><a href="MemberProfile.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:var(--nav-muted);">Profile</a></div><div style="display:flex;align-items:center;gap:16px;"><div style="font-size:13px;color:var(--muted);">Signed in as Amina Hassan</div><a href="MemberSignup.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:var(--nav-muted);">Sign out</a></div></div>
+  <div style="flex:1;padding:36px 48px;box-sizing:border-box;display:flex;flex-direction:column;gap:20px;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;"><div style="display:flex;flex-direction:column;gap:6px;"><a href="MemberBookings.html" style="font-size:13px;color:var(--muted);">&larr; My bookings</a><div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:#C6F24E;text-transform:uppercase;">Phase 3 · Bookings</div><div style="font-size:24px;font-weight:700;">Yoga Flow</div><div style="font-size:13px;color:var(--muted);max-width:760px;">Last Tuesday, 6:00pm</div></div><div style="display:flex;gap:10px;"></div></div><div style="display:flex;gap:16px;flex-wrap:wrap;"><div style="flex:1;min-width:320px;background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;"><div style="font-size:14px;font-weight:600;color:#C6F24E;">Booking</div><div style="display:flex;flex-direction:column;gap:2px;padding:10px 0;border-top:1px solid var(--border);"><div style="font-size:11px;color:var(--muted);">Class</div><div style="font-size:14px;color:var(--text);">Yoga Flow</div></div><div style="display:flex;flex-direction:column;gap:2px;padding:10px 0;border-top:1px solid var(--border);"><div style="font-size:11px;color:var(--muted);">Facility</div><div style="font-size:14px;color:var(--text);">Studio B, Nyali</div></div><div style="display:flex;flex-direction:column;gap:2px;padding:10px 0;border-top:1px solid var(--border);"><div style="font-size:11px;color:var(--muted);">Time</div><div style="font-size:14px;color:var(--text);">Last Tuesday, 6:00pm</div></div></div><div style="flex:1;min-width:320px;background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;"><div style="font-size:14px;font-weight:600;color:#C6F24E;">Status</div><div style="display:flex;flex-direction:column;gap:2px;padding:10px 0;border-top:1px solid var(--border);"><div style="font-size:11px;color:var(--muted);">Outcome</div><div style="font-size:14px;color:var(--text);"><div style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:7px;background:var(--hover);color:#C6F24E;text-align:center;display:inline-block;">Attended</div></div></div><div style="display:flex;flex-direction:column;gap:2px;padding:10px 0;border-top:1px solid var(--border);"><div style="font-size:11px;color:var(--muted);">Booked</div><div style="font-size:14px;color:var(--text);">3 days before class</div></div></div></div>
+  </div>
+</div>
+<script>(function(){function s(){var el=document.querySelector('[data-active="1"]');if(el&&el.scrollIntoView){el.scrollIntoView({block:'center'});}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(s,0);});}else{setTimeout(s,0);}})();</script>
+</body>
+</html>

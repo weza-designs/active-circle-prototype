@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Founders Members</title>
+<script src="./theme.js"></script>
 <script src="./support.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
 </head>
@@ -10,41 +11,50 @@
 <x-dc>
 <helmet>
 <style>
-  body{margin:0;font-family:'Archivo',sans-serif;background:#0B1F1A;}
+
+:root{
+  --bg:#0B1F1A;--sidebar-bg:#0E211C;--border:#1E3B34;--card-bg:#12261F;
+  --text:#EAF3E7;--muted:#7C8F86;--muted2:#51605A;--hover:#173028;--nav-muted:#C9D6CF;
+}
+:root[data-theme="light"]{
+  --bg:#FFFFFF;--sidebar-bg:#F0F5EE;--border:#D7E3DA;--card-bg:#F6F9F5;
+  --text:#16261F;--muted:#5B6B63;--muted2:#96A49C;--hover:#E8F3E2;--nav-muted:#5B6B63;
+}
+  body{margin:0;font-family:'Archivo',sans-serif;background:var(--bg);}
   a{color:inherit;text-decoration:none;}
-  .navlink:hover{background:#173028;}
+  .navlink:hover{background:var(--hover);}
   button{font-family:'Archivo',sans-serif;border:none;cursor:pointer;}
 </style>
 </helmet>
-<div style="width:1440px;height:900px;box-sizing:border-box;background:#0B1F1A;color:#EAF3E7;display:flex;flex-direction:column;">
-  <div style="height:76px;flex:0 0 76px;background:#0E211C;border-bottom:1px solid #1E3B34;display:flex;align-items:center;justify-content:space-between;padding:0 48px;box-sizing:border-box;">
+<div style="width:1440px;height:900px;box-sizing:border-box;background:var(--bg);color:var(--text);display:flex;flex-direction:column;">
+  <div style="height:76px;flex:0 0 76px;background:var(--sidebar-bg);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;box-sizing:border-box;">
     <div style="display:flex;align-items:center;gap:28px;">
       <div style="display:flex;align-items:center;gap:10px;">
         <span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:26px;width:auto;display:block;"></span>
       </div>
-      <a href="MemberDashboard.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:#C9D6CF;">Dashboard</a>
-      <a href="FamilyAccount.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:#C9D6CF;">Family</a>
-      <a href="MemberProfile.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:#C9D6CF;">Profile</a>
+      <a href="MemberDashboard.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:var(--nav-muted);">Dashboard</a>
+      <a href="FamilyAccount.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:var(--nav-muted);">Family</a>
+      <a href="MemberProfile.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:var(--nav-muted);">Profile</a>
     </div>
     <div style="display:flex;align-items:center;gap:16px;">
-      <div style="font-size:13px;color:#7C8F86;">Signed in as Amina Hassan</div>
-      <a href="MemberSignup.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:#C9D6CF;">Sign out</a>
+      <div style="font-size:13px;color:var(--muted);">Signed in as Amina Hassan</div>
+      <a href="MemberSignup.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:var(--nav-muted);">Sign out</a>
     </div>
   </div>
   <div style="flex:1;padding:36px 48px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;">
     <div style="width:560px;display:flex;flex-direction:column;gap:18px;">
-      <a href="MemberDashboard.dc.html" style="font-size:13px;color:#7C8F86;">← Dashboard</a>
+      <a href="MemberDashboard.dc.html" style="font-size:13px;color:var(--muted);">← Dashboard</a>
       <div style="display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;">
         <div style="font-size:28px;">★</div>
         <div style="font-size:24px;font-weight:700;">Become a Founding Member</div>
-        <div style="font-size:13px;color:#7C8F86;">A locked-in discounted rate for life, a Founder badge, and priority class booking — for the first members only.</div>
+        <div style="font-size:13px;color:var(--muted);">A locked-in discounted rate for life, a Founder badge, and priority class booking — for the first members only.</div>
       </div>
-      <div style="background:#12261F;border:1px solid #1E3B34;border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;">
-        <div style="display:flex;justify-content:space-between;font-size:13px;color:#7C8F86;">
+      <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--muted);">
           <span>Spots claimed</span>
           <span>{{claimed}} of {{cap}}</span>
         </div>
-        <div style="height:10px;border-radius:6px;background:#1E3B34;overflow:hidden;">
+        <div style="height:10px;border-radius:6px;background:var(--border);overflow:hidden;">
           <div style="height:100%;border-radius:6px;background:#C6F24E;width:{{pct}};"></div>
         </div>
         <sc-if value="{{isOpen}}" hint-placeholder-val="{{true}}">

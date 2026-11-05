@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Staff Login</title>
+<script src="./theme.js"></script>
 <script src="./support.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
 </head>
@@ -10,33 +11,42 @@
 <x-dc>
 <helmet>
 <style>
-  body{margin:0;font-family:'Archivo',sans-serif;background:#0B1F1A;}
+
+:root{
+  --bg:#0B1F1A;--sidebar-bg:#0E211C;--border:#1E3B34;--card-bg:#12261F;
+  --text:#EAF3E7;--muted:#7C8F86;--muted2:#51605A;--hover:#173028;--nav-muted:#C9D6CF;
+}
+:root[data-theme="light"]{
+  --bg:#FFFFFF;--sidebar-bg:#F0F5EE;--border:#D7E3DA;--card-bg:#F6F9F5;
+  --text:#16261F;--muted:#5B6B63;--muted2:#96A49C;--hover:#E8F3E2;--nav-muted:#5B6B63;
+}
+  body{margin:0;font-family:'Archivo',sans-serif;background:var(--bg);}
   a{color:#C6F24E;text-decoration:none;}
   a:hover{color:#DFFA8C;}
   input{font-family:'Archivo',sans-serif;}
 </style>
 </helmet>
-<div style="width:1440px;height:900px;box-sizing:border-box;background:#0B1F1A;display:flex;align-items:center;justify-content:center;color:#EAF3E7;">
+<div style="width:1440px;height:900px;box-sizing:border-box;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--text);">
   <div style="width:420px;display:flex;flex-direction:column;gap:28px;">
     <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-start;">
       <div style="display:flex;align-items:center;gap:10px;">
         <span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:31px;width:auto;display:block;"></span>
       </div>
-      <div style="font-size:14px;color:#7C8F86;">Staff &amp; Admin — Mock sign in</div>
+      <div style="font-size:14px;color:var(--muted);">Staff &amp; Admin — Mock sign in</div>
     </div>
-    <div style="background:#12261F;border:1px solid #1E3B34;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:20px;">
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:20px;">
       <div style="display:flex;flex-direction:column;gap:8px;">
-        <label for="email" style="font-size:13px;color:#7C8F86;">Email</label>
-        <input id="email" type="email" value="front.desk@activecircle.co.ke" style="background:#173028;border:1px solid #1E3B34;border-radius:10px;color:#EAF3E7;padding:12px 14px;font-size:14px;outline:none;">
+        <label for="email" style="font-size:13px;color:var(--muted);">Email</label>
+        <input id="email" type="email" value="front.desk@activecircle.co.ke" style="background:var(--hover);border:1px solid var(--border);border-radius:10px;color:var(--text);padding:12px 14px;font-size:14px;outline:none;">
       </div>
       <div style="display:flex;flex-direction:column;gap:8px;">
-        <label for="password" style="font-size:13px;color:#7C8F86;">Password</label>
-        <input id="password" type="password" value="••••••••" style="background:#173028;border:1px solid #1E3B34;border-radius:10px;color:#EAF3E7;padding:12px 14px;font-size:14px;outline:none;">
+        <label for="password" style="font-size:13px;color:var(--muted);">Password</label>
+        <input id="password" type="password" value="••••••••" style="background:var(--hover);border:1px solid var(--border);border-radius:10px;color:var(--text);padding:12px 14px;font-size:14px;outline:none;">
       </div>
       <a href="SettingsHub.dc.html" style="display:block;text-align:center;background:#C6F24E;color:#0B1F1A;font-weight:600;font-size:15px;padding:13px;border-radius:10px;">Sign in</a>
-      <div style="font-size:12px;color:#7C8F86;text-align:center;">This mockup skips real authentication — any click signs you in as Front Desk.</div>
+      <div style="font-size:12px;color:var(--muted);text-align:center;">This mockup skips real authentication — any click signs you in as Front Desk.</div>
     </div>
-    <div style="font-size:12px;color:#7C8F86;text-align:center;">Phase 1 — Foundation mockup · not connected to a real backend</div>
+    <div style="font-size:12px;color:var(--muted);text-align:center;">Phase 1 — Foundation mockup · not connected to a real backend</div>
   </div>
 </div>
 </x-dc>
