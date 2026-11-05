@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Family Account</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;font-family:'Archivo',sans-serif;background:#0B1F1A;}
+  a{color:inherit;text-decoration:none;}
+  .navlink:hover{background:#173028;}
+  button{font-family:'Archivo',sans-serif;border:none;cursor:pointer;}
+  input{font-family:'Archivo',sans-serif;}
+
+  .navscroll::-webkit-scrollbar{width:6px;}
+  .navscroll::-webkit-scrollbar-thumb{background:#1E3B34;border-radius:3px;}
+  .navscroll{scrollbar-width:thin;scrollbar-color:#1E3B34 transparent;}
+</style>
+</helmet>
+<div style="width:1440px;height:900px;box-sizing:border-box;background:#0B1F1A;color:#EAF3E7;display:flex;flex-direction:column;">
+  <div style="height:76px;flex:0 0 76px;background:#0E211C;border-bottom:1px solid #1E3B34;display:flex;align-items:center;justify-content:space-between;padding:0 48px;box-sizing:border-box;">
+    <div style="display:flex;align-items:center;gap:28px;"><div style="display:flex;align-items:center;gap:10px;"><span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:26px;width:auto;display:block;"></span></div><a href="MemberDashboard.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Dashboard</a><a href="MemberBookings.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Bookings</a><a href="MemberQRCode.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Entry</a><a href="FamilyAccount.dc.html" class="navlink" data-active="1" style="padding:8px 14px;border-radius:9px;background:#173028;font-size:14px;font-weight:600;color:#EAF3E7;">Family</a><a href="MemberProfile.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Profile</a></div><div style="display:flex;align-items:center;gap:16px;"><div style="font-size:13px;color:#7C8F86;">Signed in as Amina Hassan</div><a href="MemberSignup.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:#C9D6CF;">Sign out</a></div>
+  </div>
+  <div style="flex:1;padding:36px 48px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;gap:20px;">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <a href="MemberDashboard.dc.html" style="font-size:13px;color:#7C8F86;">← Dashboard</a>
+      <div style="font-size:22px;font-weight:700;">Family account</div>
+      <div style="font-size:13px;color:#7C8F86;">As guardian, you manage every linked membership here — minors can't manage their own.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;max-width:640px;">
+      <sc-for list="{{members}}" as="m" hint-placeholder-count="2">
+        <div style="display:flex;align-items:center;gap:16px;background:#12261F;border:1px solid #1E3B34;border-radius:14px;padding:16px 20px;">
+          <div style="width:36px;height:36px;border-radius:10px;background:#1E3B34;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#C6F24E;flex:0 0 36px;">{{m.initial}}</div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="font-size:14px;font-weight:600;">{{m.name}} <span style="font-size:12px;color:#7C8F86;font-weight:400;">· {{m.relationship}}, age {{m.age}}</span></div>
+            <div style="font-size:12px;color:{{m.statusColor}};">{{m.status}}</div>
+          </div>
+          <button onClick="{{m.remove}}" style="background:#173028;color:#F2A3A3;font-weight:600;font-size:13px;padding:9px 14px;border-radius:9px;border:1px solid #2C4A41;">Remove</button>
+        </div>
+      </sc-for>
+      <sc-if value="{{isAdding}}" hint-placeholder-val="{{false}}">
+      <div style="background:#12261F;border:1px solid #1E3B34;border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;gap:10px;">
+          <input value="{{newName}}" onInput="{{onNewName}}" placeholder="Full name" style="flex:1;background:#0E211C;border:1px solid #1E3B34;border-radius:9px;color:#EAF3E7;padding:11px 14px;font-size:13px;outline:none;">
+          <input value="{{newRelationship}}" onInput="{{onNewRelationship}}" placeholder="Relationship" style="flex:1;background:#0E211C;border:1px solid #1E3B34;border-radius:9px;color:#EAF3E7;padding:11px 14px;font-size:13px;outline:none;">
+          <input value="{{newAge}}" onInput="{{onNewAge}}" placeholder="Age" style="flex:0 0 90px;background:#0E211C;border:1px solid #1E3B34;border-radius:9px;color:#EAF3E7;padding:11px 14px;font-size:13px;outline:none;">
+        </div>
+        <button onClick="{{saveNew}}" style="background:#C6F24E;color:#0B1F1A;font-weight:600;font-size:13px;padding:10px 0;border-radius:9px;align-self:flex-start;padding-left:18px;padding-right:18px;">Save</button>
+      </div>
+      </sc-if>
+      <sc-if value="{{isNotAdding}}" hint-placeholder-val="{{true}}">
+      <button onClick="{{startAdd}}" style="background:#173028;color:#EAF3E7;font-weight:600;font-size:13px;padding:11px 18px;border-radius:10px;border:1px solid #1E3B34;align-self:flex-start;">+ Add family member</button>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      members: [{ id: 'f1', initial: 'K', name: 'Kevin Hassan', relationship: 'Son', age: '12', status: 'Active, included on Family add-on' }],
+      adding: false,
+      newName: '', newRelationship: '', newAge: ''
+    };
+  }
+  remove(id) {
+    return () => this.setState({ members: this.state.members.filter(m => m.id !== id) });
+  }
+  startAdd() {
+    return () => this.setState({ adding: true });
+  }
+  saveNew() {
+    return () => {
+      if (!this.state.newName) return;
+      const member = { id: 'f' + Date.now(), initial: this.state.newName[0].toUpperCase(), name: this.state.newName, relationship: this.state.newRelationship || 'Family', age: this.state.newAge || '—', status: 'Pending — awaiting waiver' };
+      this.setState({ members: [...this.state.members, member], adding: false, newName: '', newRelationship: '', newAge: '' });
+    };
+  }
+  renderVals() {
+    const members = this.state.members.map(m => ({ ...m, remove: this.remove(m.id), statusColor: m.status.startsWith('Pending') ? '#C6F24E' : '#7C8F86' }));
+    return {
+      members,
+      isAdding: this.state.adding, isNotAdding: !this.state.adding,
+      startAdd: this.startAdd(), saveNew: this.saveNew(),
+      newName: this.state.newName, onNewName: (e) => this.setState({ newName: e.target.value }),
+      newRelationship: this.state.newRelationship, onNewRelationship: (e) => this.setState({ newRelationship: e.target.value }),
+      newAge: this.state.newAge, onNewAge: (e) => this.setState({ newAge: e.target.value })
+    };
+  }
+}
+</script>
+<script>(function(){function s(){var el=document.querySelector('[data-active="1"]');if(el&&el.scrollIntoView){el.scrollIntoView({block:'center'});}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(s,0);});}else{setTimeout(s,0);}})();</script>
+</body>
+</html>

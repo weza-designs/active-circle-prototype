@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Request a Freeze</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;font-family:'Archivo',sans-serif;background:#0B1F1A;}
+  a{color:inherit;text-decoration:none;}
+  .navlink:hover{background:#173028;}
+  button{font-family:'Archivo',sans-serif;border:none;cursor:pointer;}
+  input{font-family:'Archivo',sans-serif;}
+
+  .navscroll::-webkit-scrollbar{width:6px;}
+  .navscroll::-webkit-scrollbar-thumb{background:#1E3B34;border-radius:3px;}
+  .navscroll{scrollbar-width:thin;scrollbar-color:#1E3B34 transparent;}
+</style>
+</helmet>
+<div style="width:1440px;height:900px;box-sizing:border-box;background:#0B1F1A;color:#EAF3E7;display:flex;flex-direction:column;">
+  <div style="height:76px;flex:0 0 76px;background:#0E211C;border-bottom:1px solid #1E3B34;display:flex;align-items:center;justify-content:space-between;padding:0 48px;box-sizing:border-box;">
+    <div style="display:flex;align-items:center;gap:28px;"><div style="display:flex;align-items:center;gap:10px;"><span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:26px;width:auto;display:block;"></span></div><a href="MemberDashboard.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Dashboard</a><a href="MemberBookings.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Bookings</a><a href="MemberQRCode.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Entry</a><a href="FamilyAccount.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Family</a><a href="MemberProfile.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;background:transparent;font-size:14px;font-weight:400;color:#C9D6CF;">Profile</a></div><div style="display:flex;align-items:center;gap:16px;"><div style="font-size:13px;color:#7C8F86;">Signed in as Amina Hassan</div><a href="MemberSignup.dc.html" class="navlink" style="padding:8px 14px;border-radius:9px;font-size:14px;color:#C9D6CF;">Sign out</a></div>
+  </div>
+  <div style="flex:1;padding:36px 48px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;">
+    <div style="width:520px;display:flex;flex-direction:column;gap:18px;">
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <a href="MemberDashboard.dc.html" style="font-size:13px;color:#7C8F86;">← Dashboard</a>
+        <div style="font-size:22px;font-weight:700;">Request a freeze</div>
+        <div style="font-size:13px;color:#7C8F86;">Up to 2 freezes per year, 7–60 days each. Blocked while a payment is outstanding.</div>
+      </div>
+
+      <sc-if value="{{isForm}}" hint-placeholder-val="{{true}}">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;gap:12px;">
+          <input value="{{startDate}}" onInput="{{onStart}}" placeholder="Start date (DD/MM/YYYY)" style="flex:1;background:#12261F;border:1px solid #1E3B34;border-radius:11px;color:#EAF3E7;padding:13px 16px;font-size:14px;outline:none;">
+          <input value="{{endDate}}" onInput="{{onEnd}}" placeholder="End date (DD/MM/YYYY)" style="flex:1;background:#12261F;border:1px solid #1E3B34;border-radius:11px;color:#EAF3E7;padding:13px 16px;font-size:14px;outline:none;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="font-size:12px;color:#7C8F86;">Reason</div>
+          <div style="display:flex;gap:8px;">
+            <sc-for list="{{reasons}}" as="r" hint-placeholder-count="4">
+              <button onClick="{{r.pick}}" style="background:{{r.bg}};color:{{r.color}};font-weight:600;font-size:13px;padding:9px 14px;border-radius:9px;border:1px solid #1E3B34;">{{r.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <button onClick="{{submit}}" style="background:{{submitBg}};color:{{submitColor}};font-weight:600;font-size:14px;padding:13px 0;border-radius:11px;margin-top:4px;">Submit request</button>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{isSubmitted}}" hint-placeholder-val="{{false}}">
+      <div style="background:#12261F;border:1px solid #1E3B34;border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:14px;font-weight:600;color:#C6F24E;">Freeze requested — awaiting staff approval</div>
+        <div style="font-size:13px;color:#C9D6CF;">{{startDate}} to {{endDate}}, reason: {{selectedReasonLabel}}. Billing pauses once approved.</div>
+        <a href="MemberDashboard.dc.html" style="color:#7C8F86;font-size:13px;margin-top:4px;">← Back to dashboard</a>
+      </div>
+      </sc-if>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { startDate: '', endDate: '', reason: null, submitted: false };
+  }
+  pick(id) {
+    return () => this.setState({ reason: id });
+  }
+  submit() {
+    return () => {
+      if (!this.state.startDate || !this.state.endDate || !this.state.reason) return;
+      this.setState({ submitted: true });
+    };
+  }
+  renderVals() {
+    const labels = { travel: 'Travel', medical: 'Injury / Medical', financial: 'Financial', other: 'Other' };
+    const reasons = Object.entries(labels).map(([id, label]) => ({
+      label, pick: this.pick(id),
+      bg: this.state.reason === id ? '#C6F24E' : '#12261F',
+      color: this.state.reason === id ? '#0B1F1A' : '#C9D6CF'
+    }));
+    const ready = this.state.startDate && this.state.endDate && this.state.reason;
+    return {
+      isForm: !this.state.submitted, isSubmitted: this.state.submitted,
+      startDate: this.state.startDate, onStart: (e) => this.setState({ startDate: e.target.value }),
+      endDate: this.state.endDate, onEnd: (e) => this.setState({ endDate: e.target.value }),
+      reasons, submit: this.submit(),
+      submitBg: ready ? '#C6F24E' : '#1E3B34', submitColor: ready ? '#0B1F1A' : '#51605A',
+      selectedReasonLabel: this.state.reason ? labels[this.state.reason] : ''
+    };
+  }
+}
+</script>
+<script>(function(){function s(){var el=document.querySelector('[data-active="1"]');if(el&&el.scrollIntoView){el.scrollIntoView({block:'center'});}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(s,0);});}else{setTimeout(s,0);}})();</script>
+</body>
+</html>

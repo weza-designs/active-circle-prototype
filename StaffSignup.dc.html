@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Walk-in Sign-up</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;font-family:'Archivo',sans-serif;background:#0B1F1A;}
+  a{color:inherit;text-decoration:none;}
+  .navlink:hover{background:#173028;}
+  button{font-family:'Archivo',sans-serif;border:none;cursor:pointer;}
+  input{font-family:'Archivo',sans-serif;}
+
+  .navscroll::-webkit-scrollbar{width:6px;}
+  .navscroll::-webkit-scrollbar-thumb{background:#1E3B34;border-radius:3px;}
+  .navscroll{scrollbar-width:thin;scrollbar-color:#1E3B34 transparent;}
+</style>
+</helmet>
+<div style="width:1440px;height:900px;box-sizing:border-box;background:#0B1F1A;color:#EAF3E7;display:flex;">
+  <div style="width:240px;flex:0 0 240px;background:#0E211C;border-right:1px solid #1E3B34;display:flex;flex-direction:column;padding:24px 16px;box-sizing:border-box;">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 24px 8px;"><span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:26px;width:auto;display:block;"></span></div><div class="navscroll" style="display:flex;flex-direction:column;gap:1px;flex:1 1 auto;min-height:0;overflow-y:auto;"><a href="StaffSearch.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Search</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">FRONT DESK</div><a href="EntryEvents.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Entry Log</a><a href="BookingsCalendar.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Bookings</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">MEMBERS</div><a href="MembershipsHub.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Memberships</a><a href="FreezeApproval.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Freeze Approvals</a><a href="InstallmentStatus.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Installments</a><a href="StaffFamilyAccounts.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Family Accounts</a><a href="CorporateAccounts.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Corporate Accounts</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">COACHING</div><a href="Trainers.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Trainers</a><a href="TrainerApplications.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Trainer Vetting</a><a href="WorkoutTemplates.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Workout Templates</a><a href="CoachReferrals.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Coach Referrals</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">FINANCE</div><a href="PaymentReconciliation.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Payments</a><a href="RefundApproval.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Refund Approvals</a><a href="GiftCards.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Gift Cards</a><a href="CorporateInvoices.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Corporate Invoices</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">ADMIN</div><a href="StaffDirectory.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Directory</a><a href="RolesPermissions.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Roles & Permissions</a><a href="AuditLog.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Audit Log</a><a href="JobRuns.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Job Runs</a><a href="Leads.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Leads</a><a href="DataRequests.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Data Requests</a><a href="StaffMessages.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Messages</a><a href="Feedback.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Feedback</a><a href="SettingsHub.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Settings</a></div><div style="margin-top:auto;display:flex;flex-direction:column;gap:2px;padding-top:10px;"><div style="padding:10px 12px;border-radius:10px;font-size:13px;color:#51605A;">Branches <span style="font-size:11px;">(single branch)</span></div><div style="padding:10px 12px;font-size:12px;color:#7C8F86;">Signed in as Front Desk</div><a href="Main.dc.html" class="navlink" style="padding:10px 12px;border-radius:10px;font-size:13px;color:#C9D6CF;">Sign out</a></div>
+  </div>
+  <div style="flex:1;padding:36px 48px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:20px;">
+    <div style="width:100%;max-width:620px;display:flex;flex-direction:column;gap:10px;">
+      <a href="MembershipsHub.dc.html" style="font-size:13px;color:#7C8F86;">← Memberships</a>
+      <div style="font-size:22px;font-weight:700;">Walk-in sign-up</div>
+      <div style="font-size:13px;color:#7C8F86;">Same account-first order as self-signup — account, then house rules, then waiver, then package and payment.</div>
+      <div style="display:flex;gap:6px;margin-top:6px;">
+        <sc-for list="{{steps}}" as="s" hint-placeholder-count="5">
+          <div style="flex:1;display:flex;flex-direction:column;gap:6px;align-items:center;">
+            <div style="height:4px;width:100%;border-radius:2px;background:{{s.bg}};"></div>
+            <div style="font-size:11px;color:{{s.color}};">{{s.label}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <sc-if value="{{isStep1}}" hint-placeholder-val="{{true}}">
+    <div style="width:520px;display:flex;flex-direction:column;gap:14px;">
+      <input value="{{form.name}}" onInput="{{onName}}" placeholder="Full name" style="background:#12261F;border:1px solid #1E3B34;border-radius:11px;color:#EAF3E7;padding:13px 16px;font-size:14px;outline:none;">
+      <input value="{{form.phone}}" onInput="{{onPhone}}" placeholder="Phone number (M-Pesa)" style="background:#12261F;border:1px solid #1E3B34;border-radius:11px;color:#EAF3E7;padding:13px 16px;font-size:14px;outline:none;">
+      <input value="{{form.corporateCode}}" onInput="{{onCorporateCode}}" placeholder="Corporate code (optional)" style="background:#12261F;border:1px solid #1E3B34;border-radius:11px;color:#EAF3E7;padding:13px 16px;font-size:14px;outline:none;">
+      <button onClick="{{next}}" style="background:#C6F24E;color:#0B1F1A;font-weight:600;font-size:14px;padding:13px 0;border-radius:11px;margin-top:4px;">Continue</button>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{isStep2}}" hint-placeholder-val="{{false}}">
+    <div style="width:560px;display:flex;flex-direction:column;gap:14px;">
+      <div style="font-size:13px;color:#7C8F86;">Hand the screen to the member — house rules are below.</div>
+      <div style="background:#12261F;border:1px solid #1E3B34;border-radius:14px;padding:18px;font-size:13px;color:#C9D6CF;line-height:1.7;max-height:220px;overflow-y:auto;">
+        Members under 16 must be accompanied by a parent or guardian on the gym floor unless cleared for unsupervised access. Outside food and drink are not permitted past the front desk. Equipment is re-racked after use, every time. Classes have a cancellation cutoff — a late cancel or no-show counts the session as used.
+      </div>
+      <button onClick="{{toggleAgree}}" style="display:flex;align-items:center;gap:12px;background:none;padding:0;align-self:flex-start;">
+        <span style="width:22px;height:22px;border-radius:7px;border:2px solid {{agreeBorder}};background:{{agreeBg}};display:flex;align-items:center;justify-content:center;font-size:13px;color:#0B1F1A;">{{agreeMark}}</span>
+        <span style="font-size:13px;color:#C9D6CF;">Member confirmed they've read and agree to the house rules</span>
+      </button>
+      <div style="display:flex;gap:12px;margin-top:4px;">
+        <button onClick="{{back}}" style="background:#173028;color:#EAF3E7;font-weight:600;font-size:14px;padding:13px 22px;border-radius:11px;border:1px solid #1E3B34;">Back</button>
+        <button onClick="{{next}}" style="background:{{continueBg}};color:{{continueColor}};font-weight:600;font-size:14px;padding:13px 0;border-radius:11px;flex:1;">Continue</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{isStep3}}" hint-placeholder-val="{{false}}">
+    <div style="width:560px;display:flex;flex-direction:column;gap:14px;">
+      <div style="font-size:13px;color:#7C8F86;">Member signs below, in front of you.</div>
+      <div style="background:#12261F;border:1px solid #1E3B34;border-radius:14px;padding:18px;font-size:13px;color:#C9D6CF;line-height:1.7;max-height:180px;overflow-y:auto;">
+        I acknowledge that physical exercise carries inherent risk of injury. I release Active Circle, its staff, and coaches from liability arising from ordinary use of the facility. This waiver is governed by the laws of Kenya.
+      </div>
+      <input value="{{form.signature}}" onInput="{{onSignature}}" placeholder="Member's full legal name" style="background:#12261F;border:1px solid #1E3B34;border-radius:11px;color:#EAF3E7;padding:13px 16px;font-size:14px;outline:none;font-style:italic;">
+      <div style="display:flex;gap:12px;margin-top:4px;">
+        <button onClick="{{back}}" style="background:#173028;color:#EAF3E7;font-weight:600;font-size:14px;padding:13px 22px;border-radius:11px;border:1px solid #1E3B34;">Back</button>
+        <button onClick="{{next}}" style="background:{{sigContinueBg}};color:{{sigContinueColor}};font-weight:600;font-size:14px;padding:13px 0;border-radius:11px;flex:1;">Continue</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{isStep4}}" hint-placeholder-val="{{false}}">
+    <div style="width:640px;display:flex;flex-direction:column;gap:14px;">
+      <div style="display:flex;gap:14px;">
+        <sc-for list="{{packages}}" as="p" hint-placeholder-count="3">
+          <button onClick="{{p.pick}}" style="flex:1;text-align:left;background:#12261F;border:2px solid {{p.border}};border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px;">
+            <div style="font-size:14px;font-weight:700;">{{p.name}}</div>
+            <div style="font-size:16px;font-weight:700;color:#C6F24E;">KES {{p.price}}<span style="font-size:11px;color:#7C8F86;font-weight:400;">/mo</span></div>
+          </button>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:4px;">
+        <button onClick="{{back}}" style="background:#173028;color:#EAF3E7;font-weight:600;font-size:14px;padding:13px 22px;border-radius:11px;border:1px solid #1E3B34;">Back</button>
+        <button onClick="{{next}}" style="background:{{pkgContinueBg}};color:{{pkgContinueColor}};font-weight:600;font-size:14px;padding:13px 0;border-radius:11px;flex:1;">Continue</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{isStep5}}" hint-placeholder-val="{{false}}">
+    <div style="width:520px;display:flex;flex-direction:column;gap:14px;">
+      <div style="font-size:13px;color:#7C8F86;">{{selectedPackageName}} — KES {{selectedPackagePrice}}/mo</div>
+      <div style="display:flex;gap:10px;">
+        <sc-for list="{{methods}}" as="m" hint-placeholder-count="3">
+          <button onClick="{{m.pick}}" style="flex:1;background:#12261F;border:2px solid {{m.border}};border-radius:11px;padding:14px 10px;font-size:13px;font-weight:600;color:#EAF3E7;">{{m.label}}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:4px;">
+        <button onClick="{{back}}" style="background:#173028;color:#EAF3E7;font-weight:600;font-size:14px;padding:13px 22px;border-radius:11px;border:1px solid #1E3B34;">Back</button>
+        <button onClick="{{complete}}" style="background:{{payContinueBg}};color:{{payContinueColor}};font-weight:600;font-size:14px;padding:13px 0;border-radius:11px;flex:1;">Complete sign-up</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{isStep6}}" hint-placeholder-val="{{false}}">
+    <div style="width:480px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding-top:16px;">
+      <div style="width:52px;height:52px;border-radius:50%;background:#C6F24E;display:flex;align-items:center;justify-content:center;font-size:22px;color:#0B1F1A;">✓</div>
+      <div style="font-size:20px;font-weight:700;">{{firstName}} is signed up</div>
+      <div style="font-size:13px;color:#7C8F86;">{{selectedPackageName}} package, paid by {{selectedMethodName}}. Logged to the Audit Log.</div>
+      <a href="MembershipsHub.dc.html" style="background:#C6F24E;color:#0B1F1A;font-weight:600;font-size:14px;padding:13px 26px;border-radius:11px;margin-top:6px;">Back to Memberships</a>
+    </div>
+    </sc-if>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      step: 1,
+      agreedRules: false,
+      selectedPackage: null,
+      selectedMethod: null,
+      form: { name: '', phone: '', corporateCode: '', signature: '' }
+    };
+  }
+  setField(key) {
+    return (e) => this.setState({ form: { ...this.state.form, [key]: e.target.value } });
+  }
+  next() {
+    return () => {
+      if (this.state.step === 2 && !this.state.agreedRules) return;
+      if (this.state.step === 3 && !this.state.form.signature) return;
+      if (this.state.step === 4 && !this.state.selectedPackage) return;
+      this.setState({ step: this.state.step + 1 });
+    };
+  }
+  back() {
+    return () => this.setState({ step: this.state.step - 1 });
+  }
+  complete() {
+    return () => {
+      if (!this.state.selectedMethod) return;
+      this.setState({ step: 6 });
+    };
+  }
+  toggleAgree() {
+    return () => this.setState({ agreedRules: !this.state.agreedRules });
+  }
+  pickPackage(id) {
+    return () => this.setState({ selectedPackage: id });
+  }
+  pickMethod(id) {
+    return () => this.setState({ selectedMethod: id });
+  }
+  renderVals() {
+    const step = this.state.step;
+    const labels = ['Account', 'House Rules', 'Waiver', 'Package', 'Payment'];
+    const steps = labels.map((label, i) => {
+      const n = i + 1;
+      const active = n <= step || step === 6;
+      return { label, bg: active ? '#C6F24E' : '#1E3B34', color: active ? '#EAF3E7' : '#51605A' };
+    });
+    const pkgData = {
+      flex: { name: 'Flex', price: '3,500' },
+      standard: { name: 'Standard', price: '6,000' },
+      all: { name: 'All-Access', price: '9,500' }
+    };
+    const methodNames = { mpesa: 'M-Pesa', card: 'Card', counter: 'Pay at Counter' };
+    const packages = Object.entries(pkgData).map(([id, d]) => ({
+      ...d, pick: this.pickPackage(id),
+      border: this.state.selectedPackage === id ? '#C6F24E' : '#1E3B34'
+    }));
+    const methods = Object.entries(methodNames).map(([id, label]) => ({
+      label, pick: this.pickMethod(id),
+      border: this.state.selectedMethod === id ? '#C6F24E' : '#1E3B34'
+    }));
+    const agree = this.state.agreedRules;
+    const sel = this.state.selectedPackage ? pkgData[this.state.selectedPackage] : null;
+    return {
+      isStep1: step === 1, isStep2: step === 2, isStep3: step === 3, isStep4: step === 4, isStep5: step === 5, isStep6: step === 6,
+      steps,
+      form: this.state.form,
+      onName: this.setField('name'), onPhone: this.setField('phone'), onCorporateCode: this.setField('corporateCode'), onSignature: this.setField('signature'),
+      next: this.next(), back: this.back(), complete: this.complete(),
+      toggleAgree: this.toggleAgree(),
+      agreeBorder: agree ? '#C6F24E' : '#51605A', agreeBg: agree ? '#C6F24E' : 'transparent', agreeMark: agree ? '✓' : '',
+      continueBg: agree ? '#C6F24E' : '#1E3B34', continueColor: agree ? '#0B1F1A' : '#51605A',
+      sigContinueBg: this.state.form.signature ? '#C6F24E' : '#1E3B34', sigContinueColor: this.state.form.signature ? '#0B1F1A' : '#51605A',
+      packages,
+      pkgContinueBg: this.state.selectedPackage ? '#C6F24E' : '#1E3B34', pkgContinueColor: this.state.selectedPackage ? '#0B1F1A' : '#51605A',
+      selectedPackageName: sel ? sel.name : '', selectedPackagePrice: sel ? sel.price : '',
+      methods,
+      payContinueBg: this.state.selectedMethod ? '#C6F24E' : '#1E3B34', payContinueColor: this.state.selectedMethod ? '#0B1F1A' : '#51605A',
+      selectedMethodName: this.state.selectedMethod ? methodNames[this.state.selectedMethod] : '',
+      firstName: (this.state.form.name || 'Member').split(' ')[0]
+    };
+  }
+}
+</script>
+<script>(function(){function s(){var el=document.querySelector('[data-active="1"]');if(el&&el.scrollIntoView){el.scrollIntoView({block:'center'});}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(s,0);});}else{setTimeout(s,0);}})();</script>
+</body>
+</html>

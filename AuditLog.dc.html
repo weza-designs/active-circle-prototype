@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Audit Log</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;font-family:'Archivo',sans-serif;background:#0B1F1A;}
+  a{color:inherit;text-decoration:none;}
+  .navlink:hover{background:#173028;}
+  button{font-family:'Archivo',sans-serif;border:none;cursor:pointer;}
+
+  .navscroll::-webkit-scrollbar{width:6px;}
+  .navscroll::-webkit-scrollbar-thumb{background:#1E3B34;border-radius:3px;}
+  .navscroll{scrollbar-width:thin;scrollbar-color:#1E3B34 transparent;}
+</style>
+</helmet>
+<div style="width:1440px;height:900px;box-sizing:border-box;background:#0B1F1A;color:#EAF3E7;display:flex;">
+  <div style="width:240px;flex:0 0 240px;background:#0E211C;border-right:1px solid #1E3B34;display:flex;flex-direction:column;padding:24px 16px;box-sizing:border-box;">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 24px 8px;"><span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:26px;width:auto;display:block;"></span></div><div class="navscroll" style="display:flex;flex-direction:column;gap:1px;flex:1 1 auto;min-height:0;overflow-y:auto;"><a href="StaffSearch.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Search</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">FRONT DESK</div><a href="EntryEvents.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Entry Log</a><a href="BookingsCalendar.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Bookings</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">MEMBERS</div><a href="MembershipsHub.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Memberships</a><a href="FreezeApproval.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Freeze Approvals</a><a href="InstallmentStatus.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Installments</a><a href="StaffFamilyAccounts.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Family Accounts</a><a href="CorporateAccounts.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Corporate Accounts</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">COACHING</div><a href="Trainers.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Trainers</a><a href="TrainerApplications.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Trainer Vetting</a><a href="WorkoutTemplates.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Workout Templates</a><a href="CoachReferrals.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Coach Referrals</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">FINANCE</div><a href="PaymentReconciliation.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Payments</a><a href="RefundApproval.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Refund Approvals</a><a href="GiftCards.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Gift Cards</a><a href="CorporateInvoices.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Corporate Invoices</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">ADMIN</div><a href="StaffDirectory.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Directory</a><a href="RolesPermissions.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Roles & Permissions</a><a href="AuditLog.dc.html" class="navlink" data-active="1" style="padding:8px 12px;border-radius:9px;background:#173028;font-size:13px;font-weight:600;color:#EAF3E7;">Audit Log</a><a href="JobRuns.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Job Runs</a><a href="Leads.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Leads</a><a href="DataRequests.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Data Requests</a><a href="StaffMessages.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Messages</a><a href="Feedback.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Feedback</a><a href="SettingsHub.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Settings</a></div><div style="margin-top:auto;display:flex;flex-direction:column;gap:2px;padding-top:10px;"><div style="padding:10px 12px;border-radius:10px;font-size:13px;color:#51605A;">Branches <span style="font-size:11px;">(single branch)</span></div><div style="padding:10px 12px;font-size:12px;color:#7C8F86;">Signed in as Front Desk</div><a href="Main.dc.html" class="navlink" style="padding:10px 12px;border-radius:10px;font-size:13px;color:#C9D6CF;">Sign out</a></div>
+  </div>
+  <div style="flex:1;padding:40px 48px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;gap:20px;">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div style="font-size:24px;font-weight:700;">Audit Log</div>
+      <div style="font-size:14px;color:#7C8F86;">Every payment, membership change, override, and signature — who did it, and when.</div>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <sc-for list="{{filters}}" as="f" hint-placeholder-count="5">
+        <button onClick="{{f.pick}}" style="background:{{f.bg}};color:{{f.color}};font-weight:600;font-size:13px;padding:9px 16px;border-radius:9px;border:1px solid #1E3B34;">{{f.label}}</button>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px;overflow-y:auto;">
+      <sc-for list="{{rows}}" as="row" hint-placeholder-count="6">
+        <div style="display:flex;align-items:center;gap:16px;padding:14px 18px;border-bottom:1px solid #1E3B34;">
+          <div style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:7px;background:#1E3B34;color:#C6F24E;flex:0 0 90px;text-align:center;">{{row.tag}}</div>
+          <div style="flex:1;font-size:14px;">{{row.action}}</div>
+          <div style="font-size:12px;color:#7C8F86;flex:0 0 160px;">{{row.who}}</div>
+          <div style="font-size:12px;color:#51605A;flex:0 0 110px;text-align:right;">{{row.when}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.entries = [
+      { tag: 'Payments', action: 'Refund approved — KES 2,000, Grace Wanjiru', who: 'Front Desk · Maria K.', when: '10:42am today' },
+      { tag: 'Access', action: 'Manual entry override — Fatuma Ali, reason: phone battery dead', who: 'Front Desk · Brian O.', when: '9:15am today' },
+      { tag: 'Roles', action: 'Role permissions changed — Front Desk template', who: 'Admin · Turtle', when: 'Yesterday, 4:02pm' },
+      { tag: 'Waivers', action: 'Waiver signed — James Otieno', who: 'System', when: 'Yesterday, 11:20am' },
+      { tag: 'Memberships', action: 'Membership manually activated — reason: M-Pesa confirmation delayed', who: 'Front Desk · Maria K.', when: '2 days ago' },
+      { tag: 'Payments', action: 'Refund rejected — KES 500, duplicate claim', who: 'Manager · Brian O.', when: '2 days ago' }
+    ];
+    this.state = { filter: 'All' };
+  }
+  pick(name) {
+    return () => this.setState({ filter: name });
+  }
+  renderVals() {
+    const names = ['All', 'Payments', 'Access', 'Roles', 'Memberships', 'Waivers'];
+    const filters = names.map(n => ({
+      label: n, pick: this.pick(n),
+      bg: this.state.filter === n ? '#C6F24E' : '#12261F',
+      color: this.state.filter === n ? '#0B1F1A' : '#C9D6CF'
+    }));
+    const rows = this.state.filter === 'All' ? this.entries : this.entries.filter(e => e.tag === this.state.filter);
+    return { filters, rows };
+  }
+}
+</script>
+<script>(function(){function s(){var el=document.querySelector('[data-active="1"]');if(el&&el.scrollIntoView){el.scrollIntoView({block:'center'});}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(s,0);});}else{setTimeout(s,0);}})();</script>
+</body>
+</html>

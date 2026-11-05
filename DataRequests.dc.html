@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data Requests</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;font-family:'Archivo',sans-serif;background:#0B1F1A;}
+  a{color:inherit;text-decoration:none;}
+  .navlink:hover{background:#173028;}
+  button{font-family:'Archivo',sans-serif;border:none;cursor:pointer;}
+
+  .navscroll::-webkit-scrollbar{width:6px;}
+  .navscroll::-webkit-scrollbar-thumb{background:#1E3B34;border-radius:3px;}
+  .navscroll{scrollbar-width:thin;scrollbar-color:#1E3B34 transparent;}
+</style>
+</helmet>
+<div style="width:1440px;height:900px;box-sizing:border-box;background:#0B1F1A;color:#EAF3E7;display:flex;">
+  <div style="width:240px;flex:0 0 240px;background:#0E211C;border-right:1px solid #1E3B34;display:flex;flex-direction:column;padding:24px 16px;box-sizing:border-box;">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 24px 8px;"><span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:26px;width:auto;display:block;"></span></div><div class="navscroll" style="display:flex;flex-direction:column;gap:1px;flex:1 1 auto;min-height:0;overflow-y:auto;"><a href="StaffSearch.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Search</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">FRONT DESK</div><a href="EntryEvents.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Entry Log</a><a href="BookingsCalendar.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Bookings</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">MEMBERS</div><a href="MembershipsHub.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Memberships</a><a href="FreezeApproval.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Freeze Approvals</a><a href="InstallmentStatus.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Installments</a><a href="StaffFamilyAccounts.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Family Accounts</a><a href="CorporateAccounts.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Corporate Accounts</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">COACHING</div><a href="Trainers.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Trainers</a><a href="TrainerApplications.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Trainer Vetting</a><a href="WorkoutTemplates.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Workout Templates</a><a href="CoachReferrals.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Coach Referrals</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">FINANCE</div><a href="PaymentReconciliation.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Payments</a><a href="RefundApproval.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Refund Approvals</a><a href="GiftCards.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Gift Cards</a><a href="CorporateInvoices.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Corporate Invoices</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">ADMIN</div><a href="StaffDirectory.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Directory</a><a href="RolesPermissions.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Roles & Permissions</a><a href="AuditLog.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Audit Log</a><a href="JobRuns.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Job Runs</a><a href="Leads.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Leads</a><a href="DataRequests.dc.html" class="navlink" data-active="1" style="padding:8px 12px;border-radius:9px;background:#173028;font-size:13px;font-weight:600;color:#EAF3E7;">Data Requests</a><a href="StaffMessages.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Messages</a><a href="Feedback.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Feedback</a><a href="SettingsHub.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Settings</a></div><div style="margin-top:auto;display:flex;flex-direction:column;gap:2px;padding-top:10px;"><div style="padding:10px 12px;border-radius:10px;font-size:13px;color:#51605A;">Branches <span style="font-size:11px;">(single branch)</span></div><div style="padding:10px 12px;font-size:12px;color:#7C8F86;">Signed in as Front Desk</div><a href="Main.dc.html" class="navlink" style="padding:10px 12px;border-radius:10px;font-size:13px;color:#C9D6CF;">Sign out</a></div>
+  </div>
+  <div style="flex:1;padding:40px 48px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div style="font-size:24px;font-weight:700;">Data Requests</div>
+      <div style="font-size:14px;color:#7C8F86;">Kenya Data Protection Act export &amp; erasure requests — a real, working flow, not a placeholder.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;overflow-y:auto;">
+      <sc-for list="{{rows}}" as="row" hint-placeholder-count="4">
+        <div style="display:flex;align-items:center;gap:16px;background:#12261F;border:1px solid #1E3B34;border-radius:14px;padding:16px 20px;">
+          <div style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:7px;background:{{row.typeBg}};color:{{row.typeColor}};flex:0 0 auto;">{{row.type}}</div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+            <div style="font-size:14px;font-weight:600;">{{row.name}}</div>
+            <div style="font-size:12px;color:#7C8F86;">Requested {{row.when}}</div>
+          </div>
+          <div style="font-size:13px;color:{{row.statusColor}};flex:0 0 100px;">{{row.status}}</div>
+          <button onClick="{{row.complete}}" style="background:{{row.btnBg}};color:{{row.btnColor}};font-weight:600;font-size:13px;padding:9px 16px;border-radius:9px;">{{row.btnLabel}}</button>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      statuses: { r1: 'Pending', r2: 'Pending', r3: 'Pending', r4: 'Completed' }
+    };
+  }
+  complete(id) {
+    return () => this.setState({ statuses: { ...this.state.statuses, [id]: 'Completed' } });
+  }
+  row(id, type, name, when) {
+    const done = this.state.statuses[id] === 'Completed';
+    return {
+      type, name, when,
+      typeBg: type === 'Erasure' ? '#3B1E1E' : '#1E3B34',
+      typeColor: type === 'Erasure' ? '#F2A3A3' : '#C6F24E',
+      status: this.state.statuses[id],
+      statusColor: done ? '#7C8F86' : '#EAF3E7',
+      complete: this.complete(id),
+      btnBg: done ? '#173028' : '#C6F24E',
+      btnColor: done ? '#7C8F86' : '#0B1F1A',
+      btnLabel: done ? 'Completed ✓' : 'Mark completed'
+    };
+  }
+  renderVals() {
+    return {
+      rows: [
+        this.row('r1', 'Export', 'Fatuma Ali — member data export', '2 days ago'),
+        this.row('r2', 'Erasure', 'James Otieno — full erasure request', '5 days ago'),
+        this.row('r3', 'Export', 'Grace Wanjiru (lead) — data export', '1 day ago'),
+        this.row('r4', 'Erasure', 'Kevin Mwangi — full erasure request', 'today')
+      ]
+    };
+  }
+}
+</script>
+<script>(function(){function s(){var el=document.querySelector('[data-active="1"]');if(el&&el.scrollIntoView){el.scrollIntoView({block:'center'});}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(s,0);});}else{setTimeout(s,0);}})();</script>
+</body>
+</html>

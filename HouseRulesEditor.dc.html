@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>House Rules</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;font-family:'Archivo',sans-serif;background:#0B1F1A;}
+  a{color:inherit;text-decoration:none;}
+  .navlink:hover{background:#173028;}
+  button{font-family:'Archivo',sans-serif;border:none;cursor:pointer;}
+  textarea{font-family:'Archivo',sans-serif;}
+
+  .navscroll::-webkit-scrollbar{width:6px;}
+  .navscroll::-webkit-scrollbar-thumb{background:#1E3B34;border-radius:3px;}
+  .navscroll{scrollbar-width:thin;scrollbar-color:#1E3B34 transparent;}
+</style>
+</helmet>
+<div style="width:1440px;height:900px;box-sizing:border-box;background:#0B1F1A;color:#EAF3E7;display:flex;">
+  <div style="width:240px;flex:0 0 240px;background:#0E211C;border-right:1px solid #1E3B34;display:flex;flex-direction:column;padding:24px 16px;box-sizing:border-box;">
+    <div style="display:flex;align-items:center;gap:10px;padding:0 8px 24px 8px;"><span style="background:#EAF3E7;border-radius:7px;padding:5px 10px;display:inline-flex;align-items:center;"><img src="logo.png" alt="Active Circle" style="height:26px;width:auto;display:block;"></span></div><div class="navscroll" style="display:flex;flex-direction:column;gap:1px;flex:1 1 auto;min-height:0;overflow-y:auto;"><a href="StaffSearch.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Search</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">FRONT DESK</div><a href="EntryEvents.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Entry Log</a><a href="BookingsCalendar.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Bookings</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">MEMBERS</div><a href="MembershipsHub.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Memberships</a><a href="FreezeApproval.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Freeze Approvals</a><a href="InstallmentStatus.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Installments</a><a href="StaffFamilyAccounts.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Family Accounts</a><a href="CorporateAccounts.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Corporate Accounts</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">COACHING</div><a href="Trainers.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Trainers</a><a href="TrainerApplications.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Trainer Vetting</a><a href="WorkoutTemplates.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Workout Templates</a><a href="CoachReferrals.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Coach Referrals</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">FINANCE</div><a href="PaymentReconciliation.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Payments</a><a href="RefundApproval.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Refund Approvals</a><a href="GiftCards.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Gift Cards</a><a href="CorporateInvoices.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Corporate Invoices</a><div style="padding:14px 12px 4px 12px;font-size:10px;font-weight:700;letter-spacing:.06em;color:#51605A;">ADMIN</div><a href="StaffDirectory.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Directory</a><a href="RolesPermissions.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Roles & Permissions</a><a href="AuditLog.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Audit Log</a><a href="JobRuns.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Job Runs</a><a href="Leads.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Leads</a><a href="DataRequests.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Data Requests</a><a href="StaffMessages.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Staff Messages</a><a href="Feedback.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Feedback</a><a href="SettingsHub.dc.html" class="navlink" style="padding:8px 12px;border-radius:9px;background:transparent;font-size:13px;font-weight:400;color:#C9D6CF;">Settings</a></div><div style="margin-top:auto;display:flex;flex-direction:column;gap:2px;padding-top:10px;"><div style="padding:10px 12px;border-radius:10px;font-size:13px;color:#51605A;">Branches <span style="font-size:11px;">(single branch)</span></div><div style="padding:10px 12px;font-size:12px;color:#7C8F86;">Signed in as Front Desk</div><a href="Main.dc.html" class="navlink" style="padding:10px 12px;border-radius:10px;font-size:13px;color:#C9D6CF;">Sign out</a></div>
+  </div>
+  <div style="flex:1;padding:36px 48px;overflow:hidden;box-sizing:border-box;display:flex;flex-direction:column;gap:18px;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;">
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <a href="MembershipsHub.dc.html" style="font-size:13px;color:#7C8F86;">← Memberships</a>
+        <div style="font-size:24px;font-weight:700;">House Rules</div>
+        <div style="font-size:13px;color:#7C8F86;">Versioned text, same pattern as the waiver — every edit creates a new version, members re-acknowledge.</div>
+      </div>
+      <div style="font-size:12px;font-weight:700;padding:8px 14px;border-radius:9px;background:#1E3B34;color:#C6F24E;">{{currentVersionLabel}}</div>
+    </div>
+    <div style="display:flex;gap:24px;flex:1;overflow:hidden;">
+      <div style="flex:1;display:flex;flex-direction:column;gap:12px;">
+        <textarea onInput="{{onEdit}}" style="flex:1;background:#12261F;border:1px solid #1E3B34;border-radius:14px;color:#EAF3E7;padding:18px 20px;font-size:13px;line-height:1.7;resize:none;outline:none;">{{draft}}</textarea>
+        <button onClick="{{save}}" style="background:#C6F24E;color:#0B1F1A;font-weight:600;font-size:14px;padding:12px 0;border-radius:11px;align-self:flex-start;padding-left:22px;padding-right:22px;">Save as new version</button>
+      </div>
+      <div style="width:240px;flex:0 0 240px;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:13px;font-weight:600;color:#7C8F86;">Version history</div>
+        <sc-for list="{{history}}" as="v" hint-placeholder-count="3">
+          <div style="background:#12261F;border:1px solid #1E3B34;border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:2px;">
+            <div style="font-size:13px;font-weight:600;">{{v.label}}</div>
+            <div style="font-size:11px;color:#51605A;">{{v.date}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      version: 3,
+      draft: "Members under 16 must be accompanied by a parent or guardian on the gym floor at all times unless cleared for unsupervised access by staff.\nOutside food and drink are not permitted past the front desk.\nEquipment is re-racked after use, every time, no exceptions.\nClasses have a cancellation cutoff; a late cancel or no-show counts the session as used.\nRespect staff, coaches, and fellow members at all times.",
+      history: [
+        { label: 'v3 — current', date: 'Effective Oct 2026' },
+        { label: 'v2', date: 'Jun 2026' },
+        { label: 'v1', date: 'Mar 2026' }
+      ]
+    };
+  }
+  save() {
+    return () => {
+      const nextV = this.state.version + 1;
+      const history = [{ label: 'v' + nextV + ' — current', date: 'Effective now' }, ...this.state.history.map(h => ({ label: h.label.replace(' — current', ''), date: h.date }))];
+      this.setState({ version: nextV, history });
+    };
+  }
+  renderVals() {
+    return {
+      currentVersionLabel: 'v' + this.state.version + ' — effective Oct 2026',
+      draft: this.state.draft, onEdit: (e) => this.setState({ draft: e.target.value }),
+      save: this.save(),
+      history: this.state.history
+    };
+  }
+}
+</script>
+<script>(function(){function s(){var el=document.querySelector('[data-active="1"]');if(el&&el.scrollIntoView){el.scrollIntoView({block:'center'});}}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(s,0);});}else{setTimeout(s,0);}})();</script>
+</body>
+</html>
