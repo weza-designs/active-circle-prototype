@@ -94,7 +94,7 @@ html,body{margin:0;background:#070B09;min-height:100%}
 .fit{position:relative}
 .frame{transform-origin:top left;border-radius:56px;padding:12px;background:#1A1F1D;box-shadow:0 0 0 2px #2A322E,0 40px 80px rgba(0,0,0,.6)}
 .frame>.scr{width:390px;height:844px;overflow:hidden;border-radius:44px}
-@media (max-width:520px){.bar .demo,.bar .home span{display:none}.bar{padding:8px 10px;gap:8px}.ph .hint{display:none}.ph .wrap{padding:0}.ph .frame{padding:0;border-radius:0;box-shadow:none;background:none}.ph .frame>.scr{border-radius:0}}
+@media (max-width:520px){.bar .demo,.bar .home span{display:none}.bar{padding:8px 10px;gap:8px}.ph .hint{display:none}.ph .wrap{padding:0;min-height:calc(100dvh - 52px);align-items:flex-start}.ph .frame{padding:0;border-radius:0;box-shadow:none;background:none}.ph .frame>.scr{border-radius:0}}
 </style>
 </head>
 <body class="ph">
@@ -137,12 +137,13 @@ html,body{margin:0;background:#070B09;min-height:100%}
   var fit=document.getElementById('fit'),fr=document.getElementById('frame');
   function size(){
     var cw=document.documentElement.clientWidth, vw=cw-24, vh=window.innerHeight-130, s; var narrow=cw<=520;
-    if(phone && narrow){ W=390;H=844; s=cw/390; } else if(phone){ W=414;H=868; s=Math.min(1,vh/H,vw/W); }
+    if(phone && narrow){ W=390;H=844; var bh=(document.querySelector('.bar')||{offsetHeight:0}).offsetHeight; s=Math.min(cw/390,(window.innerHeight-bh)/844); } else if(phone){ W=414;H=868; s=Math.min(1,vh/H,vw/W); }
     else { s=Math.min(1,vw/W); }
-    s=Math.max(s,0.3); if(phone&&narrow){fit.style.margin='0';}
-    fr.style.transform='scale('+s+')';
+    s=Math.max(s,0.2); if(phone&&narrow){fit.style.margin='0 auto';}
+    fr.style.width=W+'px'; fr.style.height=H+'px'; fr.style.transform='scale('+s+')';
     fit.style.width=(W*s)+'px'; fit.style.height=(H*s)+'px';
   }
+  fr.style.width=W+'px'; fr.style.height=H+'px';
   window.addEventListener('resize',size); size();
 })();
 </script>
