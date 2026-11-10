@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Log in with email | Active Circle Member app demo</title>
+<link rel="icon" href="../assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#C6F24E}a:hover{color:#EEF3EF}
+.mark{position:absolute;inset:0;-webkit-mask:url(../assets/logo.png) center/contain no-repeat;mask:url(../assets/logo.png) center/contain no-repeat}
+.top{clip-path:inset(0 0 34% 0)}
+.bot{clip-path:inset(66% 0 0 0)}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes caret{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes fill{from{opacity:0;transform:translateY(-8px) scale(.8)}to{opacity:1;transform:none}}
+@keyframes wipe{from{clip-path:inset(0 100% 34% 0)}to{clip-path:inset(0 0 34% 0)}}
+@keyframes circ{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes ring{from{stroke-dashoffset:176}to{stroke-dashoffset:0}}
+.u1{animation:up .55s .1s both cubic-bezier(.2,.8,.2,1)}
+.u2{animation:up .55s .25s both cubic-bezier(.2,.8,.2,1)}
+.u3{animation:up .55s .4s both cubic-bezier(.2,.8,.2,1)}
+.pad{animation:up .6s .55s both cubic-bezier(.2,.8,.2,1)}
+.caret{animation:caret 1s 1.4s step-end infinite}
+.d1{animation:fill .3s .9s both cubic-bezier(.2,.8,.2,1)}
+.d2{animation:fill .3s 1.05s both cubic-bezier(.2,.8,.2,1)}
+.d3{animation:fill .3s 1.2s both cubic-bezier(.2,.8,.2,1)}
+.lw{animation:wipe .7s .1s both cubic-bezier(.7,0,.2,1)}
+.lc{animation:circ .5s .55s both cubic-bezier(.2,.8,.2,1)}
+.prog{stroke-dasharray:176;animation:ring 1s .3s both cubic-bezier(.2,.8,.2,1)}
+.key:active{background:#C6F24E;color:#0D1311}
+@keyframes sheet{from{transform:translateY(100%)}to{transform:none}}
+.sheet{animation:up .6s .3s both cubic-bezier(.2,.8,.2,1)}
+.kp{animation:up .6s .5s both cubic-bezier(.2,.8,.2,1)}
+@keyframes shine{0%,60%{transform:translateX(-120%) skewX(-20deg)}100%{transform:translateX(320%) skewX(-20deg)}}
+.shine{position:absolute;top:0;bottom:0;left:0;width:30%;transform:translateX(-120%);background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.45),rgba(255,255,255,0));animation:shine 4s 2s ease-in-out infinite}
+@keyframes glow{0%,100%{opacity:.6}50%{opacity:1}}
+.halo{animation:glow 5s ease-in-out infinite}
+@keyframes chip{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
+.chip{animation:chip .4s 1.35s both cubic-bezier(.2,.8,.2,1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orb{transform-origin:center;animation:spin 30s linear infinite}
+.rk{background:radial-gradient(circle at 50% 30%,#1C2621 0%,#0D1311 75%);box-shadow:inset 0 1px 0 rgba(238,243,239,.06);transition:background .15s,transform .1s,border-color .15s}
+.rk:hover{border-color:#3A4A41}
+.rk:active,.del:active{background:#C6F24E;color:#0D1311;border-color:#C6F24E;transform:scale(.94)}
+.rk:active span{color:#0D1311!important}
+@keyframes tap{0%,86%,100%{background:radial-gradient(circle at 50% 30%,#1C2621 0%,#0D1311 75%);border-color:#25302A;transform:none}90%{background:#C6F24E;border-color:#C6F24E;transform:scale(.94)}}
+@keyframes tapink{0%,86%,100%{color:#EEF3EF}90%{color:#0D1311}}
+.tap{animation:tap 4s 2.2s infinite}
+.tap span:first-child{animation:tapink 4s 2.2s infinite}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+
+<style>
+html,body{margin:0;background:#070B09;min-height:100%}
+.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(7,11,9,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1F2A25;font:500 14px 'Inter',sans-serif;color:#9BAAA1}
+.bar a.home{display:flex;align-items:center;gap:8px;color:#EEF3EF;text-decoration:none;font-weight:600}
+.bar a.home:hover{color:#C6F24E}
+.bar .demo{color:#EEF3EF;font-weight:700}
+.bar .sp{flex:1}
+.bar select{max-width:52vw;height:36px;border-radius:10px;border:1px solid #25302A;background:#161E1A;color:#EEF3EF;font:600 13px 'Inter',sans-serif;padding:0 10px}
+.nav{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid #25302A;background:#161E1A;color:#EEF3EF;font:700 20px/1 'Inter',sans-serif;text-decoration:none}
+.nav:hover{border-color:#C6F24E;color:#C6F24E}
+.nav.off{opacity:.3}
+.hint{text-align:center;font:400 13px 'Inter',sans-serif;color:#7D8C83;padding:14px 16px 0}
+.wrap{display:flex;justify-content:center;padding:18px 12px 40px}
+.fit{position:relative}
+.frame{transform-origin:top left;border-radius:56px;padding:12px;background:#1A1F1D;box-shadow:0 0 0 2px #2A322E,0 40px 80px rgba(0,0,0,.6)}
+.frame>.scr{width:390px;height:844px;overflow:hidden;border-radius:44px}
+@media (max-width:520px){.bar .demo,.bar .home span{display:none}.bar{padding:8px 10px;gap:8px}.ph .hint{display:none}.ph .wrap{padding:0;min-height:calc(100dvh - 52px);align-items:flex-start}.ph .frame{padding:0;border-radius:0;box-shadow:none;background:none}.ph .frame>.scr{border-radius:0}}
+</style>
+</head>
+<body class="ph">
+<header class="bar">
+<a class="home" href="../index.html" aria-label="Back to demo choice"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg><span>All demos</span></a>
+<span class="demo">Member app demo</span>
+<span class="sp"></span>
+<a class="nav" href="log-in.html" aria-label="Previous screen">&#8249;</a>
+<label class="sr" for="pick" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Jump to screen</label>
+<select id="pick" onchange="location.href=this.value"><option value="welcome.html">1. Welcome</option><option value="sign-up.html">2. Sign up</option><option value="log-in.html">3. Log in</option><option value="log-in-email.html" selected>4. Log in with email</option><option value="home.html">5. Home</option><option value="my-membership.html">6. My membership</option><option value="schedule.html">7. Schedule and booking</option><option value="check-in.html">8. Check in at the door</option></select>
+<a class="nav" href="home.html" aria-label="Next screen">&#8250;</a>
+</header>
+<p class="hint">Tap the lime buttons and links to move through the app, or use the arrows above.</p>
+<main class="wrap"><div class="fit" id="fit"><div class="frame" id="frame"><div class="scr">
+<div style="width:390px;height:844px;overflow:hidden;position:relative;background:#0D1311;font-family:'Inter',sans-serif">
+<svg aria-hidden="true" width="360" height="360" viewBox="0 0 360 360" style="position:absolute;top:-200px;right:-170px"><circle cx="180" cy="180" r="170" fill="#16302A"></circle><g class="orb"><circle cx="180" cy="180" r="150" fill="none" stroke="#C6F24E" stroke-width="2" stroke-dasharray="4 10" stroke-linecap="round"></circle></g></svg>
+<div style="position:relative;height:100%;display:flex;flex-direction:column">
+<div style="padding:22px 24px 0">
+<div class="u1" style="display:flex;align-items:center;justify-content:space-between">
+<a href="welcome.html" aria-label="Back" style="width:44px;height:44px;border-radius:999px;border:1px solid #25302A;background:#161E1A;display:flex;align-items:center;justify-content:center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#EEF3EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg></a>
+<div style="display:flex;align-items:center;gap:10px;font:700 13px 'Inter',sans-serif;color:#9BAAA1">Step 2 of 2<svg aria-hidden="true" width="34" height="34" viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#25302A" stroke-width="6"></circle><circle class="prog" cx="32" cy="32" r="28" fill="none" stroke="#C6F24E" stroke-width="6" stroke-linecap="round" transform="rotate(-90 32 32)"></circle></svg></div>
+</div>
+<div style="margin-top:22px;display:flex;justify-content:center"><div role="img" aria-label="Active Circle" style="position:relative;width:212px;height:44px"><div class="mark top lw" style="background:#EEF3EF"></div><div class="mark bot lc" style="background:#C6F24E"></div></div></div>
+<h1 class="u2" style="margin:28px 0 0;text-align:center;font:800 30px/1.08 'Archivo',sans-serif;color:#EEF3EF;letter-spacing:-0.02em">Welcome back</h1>
+<p class="u2" style="margin:4px 0 0;text-align:center;font:400 15px/1.5 'Inter',sans-serif;color:#9BAAA1">Enter the code we emailed you.</p>
+</div>
+<div class="sheet" style="margin:24px 16px 0;border-radius:22px;background:#C6F24E">
+<div style="padding:14px 16px 12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:baseline"><label for="b6e" style="font:700 13px 'Inter',sans-serif;color:#2A3A1A">Email</label><a href="log-in.html" style="font:700 13px 'Inter',sans-serif;color:#0D1311;text-decoration:underline">Use phone instead</a></div><div style="display:flex;height:56px;border-radius:16px;background:#0D1311;overflow:hidden"><input id="b6e" type="email" inputmode="email" autocomplete="email" value="amina.w@gmail.com" style="flex:1;min-width:0;border:0;outline:0;background:transparent;padding:0 16px;font:600 17px 'Inter',sans-serif;color:#EEF3EF"><a href="#" style="display:flex;align-items:center;padding:0 14px;font:600 13px 'Inter',sans-serif;color:#A7B5A6;text-decoration:none">Change</a></div></div>
+<div aria-hidden="true" style="position:relative;margin:0 16px;border-top:2px dashed rgba(13,19,17,.3)"><span aria-hidden="true" style="position:absolute;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:999px;background:#0D1311;left:-27px"></span><span aria-hidden="true" style="position:absolute;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:999px;background:#0D1311;right:-27px"></span></div>
+<div style="padding:12px 16px 14px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;font:700 13px 'Inter',sans-serif;color:#2A3A1A"><span>6-digit code</span><span style="font-weight:600">Resend in 24 s</span></div><div style="display:flex;gap:8px"><div style="flex:1;height:52px;border-radius:12px;background:#0D1311;display:flex;align-items:center;justify-content:center;font:800 22px 'Archivo',sans-serif;color:#C6F24E"><span class="d1">4</span></div><div style="flex:1;height:52px;border-radius:12px;background:#0D1311;display:flex;align-items:center;justify-content:center;font:800 22px 'Archivo',sans-serif;color:#C6F24E"><span class="d2">8</span></div><div style="flex:1;height:52px;border-radius:12px;background:#0D1311;display:flex;align-items:center;justify-content:center;font:800 22px 'Archivo',sans-serif;color:#C6F24E"><span class="d3">2</span></div><div style="flex:1;height:52px;border-radius:12px;background:#1F2A25;border:2px solid #C6F24E;box-shadow:0 0 0 2px #0D1311;box-sizing:border-box;display:flex;align-items:center;justify-content:center"><span class="caret" style="width:2px;height:24px;background:#C6F24E"></span></div><div style="flex:1;height:52px;border-radius:12px;background:#0D1311"></div><div style="flex:1;height:52px;border-radius:12px;background:#0D1311"></div></div></div>
+</div>
+<div class="kp" style="margin-top:18px;margin-bottom:auto;padding:0 24px 22px;display:flex;flex-direction:column">
+<p style="margin:0 0 14px;text-align:center;font:400 13px/1.5 'Inter',sans-serif;color:#9BAAA1">Works with the email you confirmed in the app.</p>
+<a class="cta" href="home.html" style="position:relative;overflow:hidden;margin-top:14px;height:56px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:16px;background:#C6F24E;font:800 16px 'Inter',sans-serif;color:#0D1311;text-decoration:none">Log in<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D1311" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg><span class="shine" aria-hidden="true"></span></a>
+<p style="margin:12px 0 0;font:400 14px 'Inter',sans-serif;color:#9BAAA1;text-align:center">New here? <a href="sign-up.html" style="color:#C6F24E;font-weight:700">Join Active Circle</a></p>
+</div>
+</div>
+</div>
+</div></div></div></main>
+<script>
+(function(){
+  var W=414,H=868,phone=true;
+  var fit=document.getElementById('fit'),fr=document.getElementById('frame');
+  function size(){
+    var cw=document.documentElement.clientWidth, vw=cw-24, vh=window.innerHeight-130, s; var narrow=cw<=520;
+    if(phone && narrow){ W=390;H=844; var bh=(document.querySelector('.bar')||{offsetHeight:0}).offsetHeight; s=Math.min(cw/390,(window.innerHeight-bh)/844); } else if(phone){ W=414;H=868; s=Math.min(1,vh/H,vw/W); }
+    else { s=Math.min(1,vw/W); }
+    s=Math.max(s,0.2); if(phone&&narrow){fit.style.margin='0 auto';}
+    fr.style.width=W+'px'; fr.style.height=H+'px'; fr.style.transform='scale('+s+')';
+    fit.style.width=(W*s)+'px'; fit.style.height=(H*s)+'px';
+  }
+  fr.style.width=W+'px'; fr.style.height=H+'px';
+  window.addEventListener('resize',size); size();
+})();
+</script>
+</body>
+</html>
