@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Welcome | Active Circle Member app demo</title>
+<link rel="icon" href="../assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#C6F24E}a:hover{color:#EEF3EF}
+.mark{position:absolute;inset:0;-webkit-mask:url(../assets/logo.png) center/contain no-repeat;mask:url(../assets/logo.png) center/contain no-repeat}
+.top{clip-path:inset(0 0 34% 0)}
+.bot{clip-path:inset(66% 0 0 0)}
+.door{position:absolute;top:0;bottom:0;width:50%;overflow:hidden}
+.dl{left:0;transform-origin:left center;transform:scaleX(0);animation:swingL 1.1s 1.35s both cubic-bezier(.65,0,.25,1)}
+.dr{right:0;transform-origin:right center;transform:scaleX(0);animation:swingR 1.1s 1.35s both cubic-bezier(.65,0,.25,1)}
+@keyframes swingL{0%{transform:none}12%{transform:scaleX(.97)}100%{transform:scaleX(0)}}
+@keyframes swingR{0%{transform:none}12%{transform:scaleX(.97)}100%{transform:scaleX(0)}}
+@keyframes seam{0%{opacity:0;transform:scaleY(0)}40%{opacity:1;transform:scaleY(1)}85%{opacity:1;transform:scaleY(1)}100%{opacity:0;transform:scaleY(1)}}
+.seam{opacity:0;animation:seam 1.3s .55s both ease-out}
+@keyframes doorlogo{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.dlg{animation:doorlogo .6s .1s both ease-out}
+@keyframes shade{from{opacity:0}to{opacity:.6}}
+.shade{opacity:0;animation:shade 1.1s 1.35s both}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}70%{transform:scale(1.06)}100%{opacity:1;transform:none}}
+@keyframes pulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.7);opacity:0}}
+@keyframes wipe{from{clip-path:inset(0 100% 34% 0)}to{clip-path:inset(0 0 34% 0)}}
+@keyframes circ{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes sheet{from{transform:translateY(105%)}to{transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes shine{0%,60%{transform:translateX(-120%) skewX(-20deg)}100%{transform:translateX(320%) skewX(-20deg)}}
+.icon{animation:pop .7s 2s both cubic-bezier(.2,.8,.2,1)}
+.p1{animation:pulse 2.6s 2.7s ease-out infinite}
+.p2{animation:pulse 2.6s 3.6s ease-out infinite}
+.orb{transform-origin:center;animation:spin 26s linear infinite}
+.lw{animation:wipe .8s 2.3s both cubic-bezier(.7,0,.2,1)}
+.lc{animation:circ .6s 2.8s both cubic-bezier(.2,.8,.2,1)}
+.tag{animation:up .5s 3s both cubic-bezier(.2,.8,.2,1)}
+.sheet{animation:sheet .8s 3.1s both cubic-bezier(.2,.8,.2,1)}
+.u1{animation:up .5s 3.5s both cubic-bezier(.2,.8,.2,1)}
+.u2{animation:up .5s 3.65s both cubic-bezier(.2,.8,.2,1)}
+.u3{animation:up .5s 3.8s both cubic-bezier(.2,.8,.2,1)}
+.f1{animation:drift 6s 3s ease-in-out infinite}
+.f2{animation:drift 7s 3.5s ease-in-out infinite}
+.shine{position:absolute;top:0;bottom:0;left:0;width:30%;transform:translateX(-120%);background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.45),rgba(255,255,255,0));animation:shine 4s 4.5s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+</style>
+
+<style>
+html,body{margin:0;background:#070B09;min-height:100%}
+.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(7,11,9,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1F2A25;font:500 14px 'Inter',sans-serif;color:#9BAAA1}
+.bar a.home{display:flex;align-items:center;gap:8px;color:#EEF3EF;text-decoration:none;font-weight:600}
+.bar a.home:hover{color:#C6F24E}
+.bar .demo{color:#EEF3EF;font-weight:700}
+.bar .sp{flex:1}
+.bar select{max-width:52vw;height:36px;border-radius:10px;border:1px solid #25302A;background:#161E1A;color:#EEF3EF;font:600 13px 'Inter',sans-serif;padding:0 10px}
+.nav{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid #25302A;background:#161E1A;color:#EEF3EF;font:700 20px/1 'Inter',sans-serif;text-decoration:none}
+.nav:hover{border-color:#C6F24E;color:#C6F24E}
+.nav.off{opacity:.3}
+.hint{text-align:center;font:400 13px 'Inter',sans-serif;color:#7D8C83;padding:14px 16px 0}
+.wrap{display:flex;justify-content:center;padding:18px 12px 40px}
+.fit{position:relative}
+.frame{transform-origin:top left;border-radius:56px;padding:12px;background:#1A1F1D;box-shadow:0 0 0 2px #2A322E,0 40px 80px rgba(0,0,0,.6)}
+.frame>.scr{width:390px;height:844px;overflow:hidden;border-radius:44px}
+@media (max-width:520px){.bar .demo,.bar .home span{display:none}.bar{padding:8px 10px;gap:8px}.ph .hint{display:none}.ph .wrap{padding:0}.ph .frame{padding:0;border-radius:0;box-shadow:none;background:none}.ph .frame>.scr{border-radius:0}}
+</style>
+</head>
+<body class="ph">
+<header class="bar">
+<a class="home" href="../index.html" aria-label="Back to demo choice"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg><span>All demos</span></a>
+<span class="demo">Member app demo</span>
+<span class="sp"></span>
+<span class="nav off" aria-hidden="true">&#8249;</span>
+<label class="sr" for="pick" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Jump to screen</label>
+<select id="pick" onchange="location.href=this.value"><option value="welcome.html" selected>1. Welcome</option><option value="sign-up.html">2. Sign up</option><option value="log-in.html">3. Log in</option><option value="home.html">4. Home</option><option value="my-membership.html">5. My membership</option><option value="schedule.html">6. Schedule and booking</option><option value="check-in.html">7. Check in at the door</option></select>
+<a class="nav" href="sign-up.html" aria-label="Next screen">&#8250;</a>
+</header>
+<p class="hint">Tap the lime buttons and links to move through the app, or use the arrows above.</p>
+<main class="wrap"><div class="fit" id="fit"><div class="frame" id="frame"><div class="scr">
+<div style="width:390px;height:844px;overflow:hidden;position:relative;background:#C6F24E;font-family:'Inter',sans-serif">
+<div class="f1" aria-hidden="true" style="position:absolute;top:70px;left:-50px;width:160px;height:160px;border-radius:999px;background:#B6E43C"></div>
+<div class="f2" aria-hidden="true" style="position:absolute;top:340px;right:-36px;width:96px;height:96px;border-radius:999px;background:#B6E43C"></div>
+<div style="position:absolute;top:24px;left:0;right:0;height:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px">
+<div class="icon" style="position:relative;width:184px;height:184px;display:flex;align-items:center;justify-content:center">
+<svg class="orb" aria-hidden="true" width="184" height="184" viewBox="0 0 184 184" style="position:absolute;inset:0"><circle cx="92" cy="92" r="88" fill="none" stroke="#0D1311" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"></circle></svg>
+<div class="p1" style="position:absolute;inset:26px;border-radius:999px;border:3px solid #0D1311"></div>
+<div class="p2" style="position:absolute;inset:26px;border-radius:999px;border:3px solid #0D1311"></div>
+<div style="position:relative;width:132px;height:132px;border-radius:999px;background:#0D1311;box-shadow:0 18px 40px rgba(13,19,17,.28);display:flex;align-items:center;justify-content:center"><svg aria-hidden="true" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#C6F24E" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h5v18h-5"></path><path d="M10 17l5-5-5-5"></path><path d="M15 12H3"></path></svg></div>
+</div>
+<div role="img" aria-label="Active Circle" style="position:relative;width:212px;height:44px"><div class="mark top lw" style="background:#0D1311"></div><div class="mark bot lc" style="background:#1E4D3A"></div></div>
+<p class="tag" style="margin:-6px 0 0;padding:8px 16px;border-radius:999px;background:rgba(13,19,17,.08);font:700 15px 'Inter',sans-serif;color:#0D1311">Doors open. Come on in.</p>
+</div>
+<div class="sheet" style="position:absolute;left:0;right:0;bottom:0;padding:26px 24px 28px;border-radius:28px 28px 0 0;background:#0D1311">
+<div aria-hidden="true" style="width:40px;height:4px;border-radius:9px;background:#25302A;margin:-12px auto 18px"></div>
+<h1 class="u1" style="margin:0 0 6px;text-align:center;font:800 28px/1.1 'Archivo',sans-serif;color:#EEF3EF;letter-spacing:-0.02em">Your gym, in your pocket.</h1>
+<p class="u1" style="margin:0 0 20px;text-align:center;font:400 15px/1.5 'Inter',sans-serif;color:#9BAAA1">Book classes, pay, and open the door with your phone.</p>
+<div class="u2" style="display:flex;flex-direction:column;gap:12px">
+<a href="sign-up.html" style="position:relative;overflow:hidden;height:56px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:16px;background:#C6F24E;font:800 16px 'Inter',sans-serif;color:#0D1311;text-decoration:none">Join Active Circle<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D1311" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg><span class="shine" aria-hidden="true"></span></a>
+<a href="log-in.html" style="height:56px;display:flex;align-items:center;justify-content:center;border-radius:16px;border:1.5px solid #25302A;background:#161E1A;font:700 16px 'Inter',sans-serif;color:#EEF3EF;text-decoration:none">I'm already a member</a>
+</div>
+<p class="u3" style="margin:16px 0 0;font:400 13px/1.5 'Inter',sans-serif;color:#9BAAA1;text-align:center">Buying a day pass? Get it at the front desk or on <a href="#" style="color:#A7B5A6">our website</a>.</p>
+</div>
+<div class="door dl" aria-hidden="true">
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,#163C2D 0%,#1E4D3A 80%,#24593F 100%)"></div>
+<div style="position:absolute;left:22px;right:22px;top:40px;height:300px;border-radius:14px;border:1.5px solid rgba(13,19,17,.28);box-shadow:inset 0 1px 0 rgba(238,243,239,.05)"></div><div style="position:absolute;left:22px;right:22px;top:504px;height:300px;border-radius:14px;border:1.5px solid rgba(13,19,17,.28);box-shadow:inset 0 1px 0 rgba(238,243,239,.05)"></div>
+<div class="shade" style="position:absolute;inset:0;background:#0D1311"></div>
+<div class="dlg" style="position:absolute;inset:0"><div style="position:absolute;left:80px;top:50%;margin-top:-24px;width:230px;height:48px"><div class="mark top" style="background:#EEF3EF"></div><div class="mark bot" style="background:#C6F24E"></div></div></div>
+<div style="position:absolute;right:14px;top:50%;margin-top:52px;width:10px;height:96px;border-radius:9px;background:linear-gradient(180deg,#C9D3CB,#8E9C93);box-shadow:0 2px 6px rgba(0,0,0,.35)"></div>
+</div>
+<div class="door dr" aria-hidden="true">
+<div style="position:absolute;inset:0;background:linear-gradient(270deg,#163C2D 0%,#1E4D3A 80%,#24593F 100%)"></div>
+<div style="position:absolute;left:22px;right:22px;top:40px;height:300px;border-radius:14px;border:1.5px solid rgba(13,19,17,.28);box-shadow:inset 0 1px 0 rgba(238,243,239,.05)"></div><div style="position:absolute;left:22px;right:22px;top:504px;height:300px;border-radius:14px;border:1.5px solid rgba(13,19,17,.28);box-shadow:inset 0 1px 0 rgba(238,243,239,.05)"></div>
+<div class="shade" style="position:absolute;inset:0;background:#0D1311"></div>
+<div class="dlg" style="position:absolute;inset:0"><div style="position:absolute;left:-115px;top:50%;margin-top:-24px;width:230px;height:48px"><div class="mark top" style="background:#EEF3EF"></div><div class="mark bot" style="background:#C6F24E"></div></div></div>
+<div style="position:absolute;left:14px;top:50%;margin-top:52px;width:10px;height:96px;border-radius:9px;background:linear-gradient(180deg,#C9D3CB,#8E9C93);box-shadow:0 2px 6px rgba(0,0,0,.35)"></div>
+</div>
+<div class="seam" aria-hidden="true" style="position:absolute;top:0;bottom:0;left:194px;width:2px;background:#C6F24E;box-shadow:0 0 22px 8px rgba(198,242,78,.6);transform-origin:center"></div>
+</div>
+</div></div></div></main>
+<script>
+(function(){
+  var W=414,H=868,phone=true;
+  var fit=document.getElementById('fit'),fr=document.getElementById('frame');
+  function size(){
+    var cw=document.documentElement.clientWidth, vw=cw-24, vh=window.innerHeight-130, s; var narrow=cw<=520;
+    if(phone && narrow){ W=390;H=844; s=cw/390; } else if(phone){ W=414;H=868; s=Math.min(1,vh/H,vw/W); }
+    else { s=Math.min(1,vw/W); }
+    s=Math.max(s,0.3); if(phone&&narrow){fit.style.margin='0';}
+    fr.style.transform='scale('+s+')';
+    fit.style.width=(W*s)+'px'; fit.style.height=(H*s)+'px';
+  }
+  window.addEventListener('resize',size); size();
+})();
+</script>
+</body>
+</html>

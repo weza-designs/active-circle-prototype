@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Schedule and booking | Active Circle Member app demo</title>
+<link rel="icon" href="../assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#C6F24E}a:hover{color:#EEF3EF}
+</style>
+
+<style>
+html,body{margin:0;background:#070B09;min-height:100%}
+.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(7,11,9,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1F2A25;font:500 14px 'Inter',sans-serif;color:#9BAAA1}
+.bar a.home{display:flex;align-items:center;gap:8px;color:#EEF3EF;text-decoration:none;font-weight:600}
+.bar a.home:hover{color:#C6F24E}
+.bar .demo{color:#EEF3EF;font-weight:700}
+.bar .sp{flex:1}
+.bar select{max-width:52vw;height:36px;border-radius:10px;border:1px solid #25302A;background:#161E1A;color:#EEF3EF;font:600 13px 'Inter',sans-serif;padding:0 10px}
+.nav{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;border:1px solid #25302A;background:#161E1A;color:#EEF3EF;font:700 20px/1 'Inter',sans-serif;text-decoration:none}
+.nav:hover{border-color:#C6F24E;color:#C6F24E}
+.nav.off{opacity:.3}
+.hint{text-align:center;font:400 13px 'Inter',sans-serif;color:#7D8C83;padding:14px 16px 0}
+.wrap{display:flex;justify-content:center;padding:18px 12px 40px}
+.fit{position:relative}
+.frame{transform-origin:top left;border-radius:56px;padding:12px;background:#1A1F1D;box-shadow:0 0 0 2px #2A322E,0 40px 80px rgba(0,0,0,.6)}
+.frame>.scr{width:390px;height:844px;overflow:hidden;border-radius:44px}
+@media (max-width:520px){.bar .demo,.bar .home span{display:none}.bar{padding:8px 10px;gap:8px}.ph .hint{display:none}.ph .wrap{padding:0}.ph .frame{padding:0;border-radius:0;box-shadow:none;background:none}.ph .frame>.scr{border-radius:0}}
+</style>
+</head>
+<body class="ph">
+<header class="bar">
+<a class="home" href="../index.html" aria-label="Back to demo choice"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg><span>All demos</span></a>
+<span class="demo">Member app demo</span>
+<span class="sp"></span>
+<a class="nav" href="my-membership.html" aria-label="Previous screen">&#8249;</a>
+<label class="sr" for="pick" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Jump to screen</label>
+<select id="pick" onchange="location.href=this.value"><option value="welcome.html">1. Welcome</option><option value="sign-up.html">2. Sign up</option><option value="log-in.html">3. Log in</option><option value="home.html">4. Home</option><option value="my-membership.html">5. My membership</option><option value="schedule.html" selected>6. Schedule and booking</option><option value="check-in.html">7. Check in at the door</option></select>
+<a class="nav" href="check-in.html" aria-label="Next screen">&#8250;</a>
+</header>
+<p class="hint">Tap the lime buttons and links to move through the app, or use the arrows above.</p>
+<main class="wrap"><div class="fit" id="fit"><div class="frame" id="frame"><div class="scr">
+<div style="width:390px;height:844px;overflow:hidden;position:relative;background:#0D1311;font-family:'Inter',sans-serif"><div style="padding:28px 20px 0;display:flex;flex-direction:column;gap:14px">
+<h1 style="margin:0;font:800 26px 'Archivo',sans-serif;color:#EEF3EF;letter-spacing:-0.02em">Schedule</h1>
+<div style="display:flex;gap:2px"><a href="#" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;border-radius:14px;text-decoration:none;background:transparent"><span style="font:600 11px 'Inter',sans-serif;color:#9BAAA1;">Mon</span><span style="font:800 17px 'Archivo',sans-serif;color:#EEF3EF">9</span></a><a href="#" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;border-radius:14px;text-decoration:none;background:transparent"><span style="font:600 11px 'Inter',sans-serif;color:#9BAAA1;">Tue</span><span style="font:800 17px 'Archivo',sans-serif;color:#EEF3EF">10</span></a><a href="#" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;border-radius:14px;text-decoration:none;background:#C6F24E"><span style="font:600 11px 'Inter',sans-serif;color:#0D1311;">Wed</span><span style="font:800 17px 'Archivo',sans-serif;color:#0D1311">11</span></a><a href="#" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;border-radius:14px;text-decoration:none;background:transparent"><span style="font:600 11px 'Inter',sans-serif;color:#9BAAA1;">Thu</span><span style="font:800 17px 'Archivo',sans-serif;color:#EEF3EF">12</span></a><a href="#" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;border-radius:14px;text-decoration:none;background:transparent"><span style="font:600 11px 'Inter',sans-serif;color:#9BAAA1;">Fri</span><span style="font:800 17px 'Archivo',sans-serif;color:#EEF3EF">13</span></a><a href="#" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;border-radius:14px;text-decoration:none;background:transparent"><span style="font:600 11px 'Inter',sans-serif;color:#9BAAA1;">Sat</span><span style="font:800 17px 'Archivo',sans-serif;color:#EEF3EF">14</span></a><a href="#" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;border-radius:14px;text-decoration:none;background:transparent"><span style="font:600 11px 'Inter',sans-serif;color:#9BAAA1;">Sun</span><span style="font:800 17px 'Archivo',sans-serif;color:#EEF3EF">15</span></a></div>
+<div style="display:flex;gap:8px;overflow:hidden"><span style="flex:none;height:32px;padding:0 12px;display:inline-flex;align-items:center;border-radius:99px;font:600 13px 'Inter',sans-serif;color:#EEF3EF;;background:transparent;border:1px solid #C6F24E">All</span><span style="flex:none;height:32px;padding:0 12px;display:inline-flex;align-items:center;border-radius:99px;font:600 13px 'Inter',sans-serif;color:#EEF3EF;;background:#1F2A25;border:1px solid #25302A">CrossFit</span><span style="flex:none;height:32px;padding:0 12px;display:inline-flex;align-items:center;border-radius:99px;font:600 13px 'Inter',sans-serif;color:#EEF3EF;;background:#1F2A25;border:1px solid #25302A">Mobility</span><span style="flex:none;height:32px;padding:0 12px;display:inline-flex;align-items:center;border-radius:99px;font:600 13px 'Inter',sans-serif;color:#EEF3EF;;background:#1F2A25;border:1px solid #25302A">Spinning</span><span style="flex:none;height:32px;padding:0 12px;display:inline-flex;align-items:center;border-radius:99px;font:600 13px 'Inter',sans-serif;color:#EEF3EF;;background:#1F2A25;border:1px solid #25302A">Yoga</span></div>
+<div style="display:flex;flex-direction:column;gap:10px"><a href="#" style="display:flex;gap:14px;align-items:center;padding:14px;border-radius:16px;background:#161E1A;border:1px solid #25302A;text-decoration:none"><div style="width:62px;font:700 14px 'Inter',sans-serif;color:#EEF3EF;">5:00 am</div><div style="flex:1;min-width:0"><div style="font:700 15px 'Inter',sans-serif;color:#EEF3EF;">CrossFit</div><div style="font:400 13px 'Inter',sans-serif;color:#9BAAA1;">Coach Brian</div><div style="margin-top:4px;font:600 12px 'Inter',sans-serif;color:#FFB067;">Full · join waitlist (3)</div></div><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9BAAA1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#" style="display:flex;gap:14px;align-items:center;padding:14px;border-radius:16px;background:#161E1A;border:2px solid #C6F24E;text-decoration:none"><div style="width:62px;font:700 14px 'Inter',sans-serif;color:#EEF3EF;">6:00 am</div><div style="flex:1;min-width:0"><div style="font:700 15px 'Inter',sans-serif;color:#EEF3EF;">CrossFit</div><div style="font:400 13px 'Inter',sans-serif;color:#9BAAA1;">Coach Brian</div><div style="margin-top:4px;font:600 12px 'Inter',sans-serif;color:#C6F24E;">2 spots left</div></div><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9BAAA1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#" style="display:flex;gap:14px;align-items:center;padding:14px;border-radius:16px;background:#161E1A;border:1px solid #25302A;text-decoration:none"><div style="width:62px;font:700 14px 'Inter',sans-serif;color:#EEF3EF;">7:30 am</div><div style="flex:1;min-width:0"><div style="font:700 15px 'Inter',sans-serif;color:#EEF3EF;">Mobility</div><div style="font:400 13px 'Inter',sans-serif;color:#9BAAA1;">Coach Aisha</div><div style="margin-top:4px;font:600 12px 'Inter',sans-serif;color:#7FE0A6;">You are booked</div></div><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9BAAA1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a href="#" style="display:flex;gap:14px;align-items:center;padding:14px;border-radius:16px;background:#161E1A;border:1px solid #25302A;text-decoration:none"><div style="width:62px;font:700 14px 'Inter',sans-serif;color:#EEF3EF;">12:30 pm</div><div style="flex:1;min-width:0"><div style="font:700 15px 'Inter',sans-serif;color:#EEF3EF;">Female only CrossFit</div><div style="font:400 13px 'Inter',sans-serif;color:#9BAAA1;">Coach Aisha</div><div style="margin-top:4px;font:600 12px 'Inter',sans-serif;color:#9BAAA1;">7 spots left</div></div><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9BAAA1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+<div style="position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(5,8,7,.55)"></div>
+<section aria-label="Book CrossFit" style="position:absolute;left:0;right:0;bottom:0;background:#161E1A;border-top-left-radius:24px;border-top-right-radius:24px;padding:12px 20px 28px;display:flex;flex-direction:column;gap:14px;box-shadow:0 -12px 40px rgba(0,0,0,.4)">
+<div style="align-self:center;width:44px;height:5px;border-radius:9px;background:#25302A"></div>
+<div><div style="font:600 13px 'Inter',sans-serif;color:#9BAAA1;">Wed 11 Nov · 6:00 am · 60 min</div><div style="margin-top:4px;font:800 24px 'Archivo',sans-serif;color:#EEF3EF">CrossFit with Coach Brian</div></div>
+<div style="display:flex;gap:8px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:600;color:#0D1311;background:#C6F24E">2 spots left</span><span style="display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:600;color:#EEF3EF;background:#1F2A25">Main floor</span></div>
+<div style="display:flex;flex-direction:column;gap:6px"><label for="inj" style="font:600 13px 'Inter',sans-serif;color:#9BAAA1;">Anything your coach should know? (optional)</label><input id="inj" placeholder="For example: sore left knee" style="height:44px;padding:0 14px;border-radius:12px;border:1px solid #25302A;background:#0D1311;font:500 14px 'Inter',sans-serif;color:#EEF3EF;;outline:0"></div>
+<a href="home.html" style="height:52px;display:flex;align-items:center;justify-content:center;border-radius:16px;background:#C6F24E;font:800 16px 'Inter',sans-serif;color:#0D1311;;text-decoration:none">Book my spot</a>
+<div style="font:400 12px 'Inter',sans-serif;color:#9BAAA1;text-align:center">Free to cancel until 5:00 am. Later cancellations count as a no-show.</div>
+</section></div>
+</div></div></div></main>
+<script>
+(function(){
+  var W=414,H=868,phone=true;
+  var fit=document.getElementById('fit'),fr=document.getElementById('frame');
+  function size(){
+    var cw=document.documentElement.clientWidth, vw=cw-24, vh=window.innerHeight-130, s; var narrow=cw<=520;
+    if(phone && narrow){ W=390;H=844; s=cw/390; } else if(phone){ W=414;H=868; s=Math.min(1,vh/H,vw/W); }
+    else { s=Math.min(1,vw/W); }
+    s=Math.max(s,0.3); if(phone&&narrow){fit.style.margin='0';}
+    fr.style.transform='scale('+s+')';
+    fit.style.width=(W*s)+'px'; fit.style.height=(H*s)+'px';
+  }
+  window.addEventListener('resize',size); size();
+})();
+</script>
+</body>
+</html>
